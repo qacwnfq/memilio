@@ -34,12 +34,16 @@ public:
                double tmax,
                double dt,
                Eigen::VectorXd std,
+               Eigen::VectorXd prior,
+               Eigen::VectorXd prior_std,
                mio::TimeSeries<double> observations,
                mio::oseir::Model modelImpl) :
             t0(t0),
             tmax(tmax),
             dt(dt),
             std(std::move(std)),
+            prior(std::move(prior)),
+            prior_std(std::move(prior_std)),
             observations(std::move(observations)),
             modelImpl(std::move(modelImpl)) {}
 
@@ -58,7 +62,13 @@ public:
                     .cwiseQuotient(std.cwiseProduct(observations.get_value(i))))
                     .squaredNorm();
         }
+        // add prior terms
+        SSR += ((prior - x).cwiseQuotient(prior_std)).squaredNorm();
         return SSR;
+    }
+
+    std::optional<Eigen::VectorXd> computeLogLikelihoodGradient(const hops::VectorType &x) override {
+        return std::nullopt;
     }
 
     std::vector<std::string> getDimensionNames() const override {
@@ -79,6 +89,8 @@ private:
     double tmax;
     double dt;
     Eigen::VectorXd std;
+    Eigen::VectorXd prior;
+    Eigen::VectorXd prior_std;
     mio::TimeSeries<double> observations;
     mio::oseir::Model modelImpl;
 };
@@ -94,7 +106,7 @@ int main() {
 
     mio::oseir::Model model;
 
-    double total_population = 10000;
+    double total_population = 1'000'000;
     model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Exposed)}] = 100;
     model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Infected)}] = 100;
     model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Recovered)}] = 100;
@@ -119,10 +131,10 @@ int main() {
     auto perturbed_seir = seir;
 
     // relative stds
-    double exposed_std = 0.01;
-    double infected_std = 0.01;
-    double recovered_std = 0.01;
-    double susceptible_std = 0.01;
+    double exposed_std = 0.005;
+    double infected_std = 0.005;
+    double recovered_std = 0.005;
+    double susceptible_std = 0.005;
     Eigen::VectorXd std(4);
     std << exposed_std,
             infected_std,
@@ -139,34 +151,42 @@ int main() {
         }
     }
 
-    auto model_for_mcmc = seir_model(t0, tmax, dt, std, perturbed_seir, model);
+    Eigen::VectorXd prior(4);
+    prior << 10, 10, 0.05, 12;
+    Eigen::VectorXd prior_std(4);
+    prior_std << 1e6, 1e6, 0.025, 2.5;
+
+    auto model_for_mcmc = seir_model(t0, tmax, dt, std, prior, prior_std, perturbed_seir, model);
 
     Eigen::MatrixXd A(8, 4);
     A << Eigen::MatrixXd::Identity(4, 4), -Eigen::MatrixXd::Identity(4, 4);
     Eigen::VectorXd b(8);
     b << 15 * Eigen::VectorXd::Ones(4), Eigen::VectorXd::Zero(4);
+    b(2) = 0.10;
     Eigen::VectorXd start(4);
-    start << latent_time, infectious_time, infection_probability_from_contact, contact_patterns;
+    start << 1, 1, 0.1, 5;
 
 
     auto markovChain = hops::MarkovChainFactory::createMarkovChain(
-            hops::MarkovChainType::CoordinateHitAndRun,
+            hops::MarkovChainType::HitAndRun,
             A,
             b,
             start,
             model_for_mcmc);
 
-    markovChain->setParameter(hops::ProposalParameter::STEP_SIZE, 0.25);
+    markovChain->setParameter(hops::ProposalParameter::STEP_SIZE, 0.025);
 
-    long n_samples = 10'000;
+    long n_samples = 5'000'000;
     std::vector<double> acceptance_rates;
     std::vector<Eigen::VectorXd> states;
     std::vector<double> negative_log_likelihoods;
     for (long i = 0; i < n_samples; ++i) {
         auto[acceptance_rate, state] = markovChain->draw(rng, A.cols());
-        negative_log_likelihoods.emplace_back(markovChain->getStateNegativeLogLikelihood());
-        acceptance_rates.emplace_back(acceptance_rate);
-        states.emplace_back(state);
+        if (i > 100'000) {
+            negative_log_likelihoods.emplace_back(markovChain->getStateNegativeLogLikelihood());
+            acceptance_rates.emplace_back(acceptance_rate);
+            states.emplace_back(state);
+        }
     }
 
     auto fileWriter = hops::FileWriterFactory::createFileWriter("seir_samples", hops::FileWriterType::CSV);
