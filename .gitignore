@@ -275,3 +275,7 @@ docs/html
 docs/xml
 
 # End of https://www.gitignore.io/api/c++,node,python
+
+# CMake build dirs
+cmake-build*
+

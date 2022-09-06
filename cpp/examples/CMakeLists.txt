@@ -14,6 +14,10 @@ target_link_libraries(adapt_rk_example PRIVATE memilio)
 add_executable(seir_example seir.cpp)
 target_link_libraries(seir_example PRIVATE memilio ode_seir)
 
+add_executable(seir_bayesian_inference_example seir_bayesian_inference.cpp)
+# TODO add MEMILIO_HAS_HOPS
+target_link_libraries(seir_bayesian_inference_example PRIVATE memilio ode_seir hops)
+
 add_executable(secir_example secir.cpp)
 target_link_libraries(secir_example PRIVATE memilio secir)
 
