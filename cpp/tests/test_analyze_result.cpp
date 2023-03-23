@@ -112,6 +112,19 @@ TEST(TestInterpolateTimeSeries, timePointsCanMatchDayExactly)
     ASSERT_THAT(interpolated[2], MatrixNear(Vec::Constant(1, 2.0 + 10. / 11.)));
 }
 
+TEST(TestInterpolateTimeSeries, timePointsCanMatchDay0Exactly)
+{
+    using Vec = mio::TimeSeries<double>::Vector;
+    mio::TimeSeries<double> ts(0);
+    ts.add_time_point(0.0, Vec::Constant(1, 0.0));
+    ts.add_time_point(1.0, Vec::Constant(1, 2.0));
+
+    auto interpolated = mio::interpolate_simulation_result(ts);
+
+    ASSERT_THAT(interpolated[0], MatrixNear(Vec::Constant(1, 0.0)));
+    ASSERT_THAT(interpolated[1], MatrixNear(Vec::Constant(1, 2.0)));
+}
+
 TEST(TestInterpolateTimeSeries, timePointsCanHaveDefaultTolerance)
 {
     mio::TimeSeries<double> ts(10);
