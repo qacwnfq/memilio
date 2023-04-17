@@ -121,6 +121,20 @@ public:
     //REMARK: Not pure virtual for easier java/python bindings
     virtual void get_derivatives(Eigen::Ref<const Eigen::VectorXd>, Eigen::Ref<const Eigen::VectorXd> /*y*/,
                                  double /*t*/, Eigen::Ref<Eigen::VectorXd> /*dydt*/) const {};
+
+    //REMARK: Not pure virtual for easier java/python bindings
+    // See also B-matrix from https://doi.org/10.1098/rsos.211065
+    virtual void get_noise_correlation(Eigen::Ref<const Eigen::VectorXd>, Eigen::Ref<const Eigen::VectorXd> /*y*/,
+                                 double /*t*/, Eigen::Ref<Eigen::MatrixXd> /*noise_correlation*/) const {
+        throw std::runtime_error("get_noise_correlation is not implemented for this model");
+    };
+
+    //REMARK: Not pure virtual for easier java/python bindings
+    // See also J-matrix from https://doi.org/10.1098/rsos.211065
+    virtual void get_drift(Eigen::Ref<const Eigen::VectorXd>, Eigen::Ref<const Eigen::VectorXd> /*y*/,
+                                       double /*t*/, Eigen::Ref<Eigen::MatrixXd> /*drift*/) const {
+        throw std::runtime_error("get_drift is not implemented for this model");
+    };
 #endif // USE_DERIV_FUNC
 
     /**
@@ -195,7 +209,6 @@ public:
     {
         populations.check_constraints();
     }
-
     Populations populations{};
     ParameterSet parameters{};
 

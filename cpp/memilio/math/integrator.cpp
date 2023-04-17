@@ -63,7 +63,7 @@ Eigen::Ref<Eigen::VectorXd> OdeIntegrator::advance(double tmax)
         log_warning("Last time step too small. Could not reach tmax exactly.");
     }
     else {
-        log_info("Adaptive step sizing successful to tolerances.");
+//        log_info("Adaptive step sizing successful to tolerances.");
     }
 
     return m_result.get_last_value();

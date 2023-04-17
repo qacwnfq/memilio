@@ -25,6 +25,7 @@
 #include "compartments/simulation.h"
 #include "compartments/compartmentalmodel.h"
 #include "epidemiology/populations.h"
+#include "memilio/compartments/likelihood.h"
 #include "ode_seir/model.h"
 #include "ode_seir/infection_state.h"
 #include "memilio/data/analyze_result.h"
@@ -81,6 +82,24 @@ PYBIND11_MODULE(_simulation_oseir, m)
             return mio::simulate(t0, tmax, dt, model);
         },
         "Simulates a oseir from t0 to tmax.", py::arg("t0"), py::arg("tmax"), py::arg("dt"), py::arg("model"));
+
+
+    m.def(
+         "likelihood",
+        [](
+            const mio::oseir::Model& model,
+            const mio::TimeSeries<double>& observations
+            // const Eigen::MatrixXd& filter
+            ) {
+             // TODO FJ add filter
+            mio::Likelihood<mio::oseir::Model> likelihood(model);
+            return likelihood.compute(observations);
+         },
+        "Computes likelihood for oseir model with the parameters that are currently set. Filter is used to map simulated compartments to observable compartments."
+         ,py::arg("model")
+         ,py::arg("observations")
+        //  ,py::arg("filter")
+         );
 
     m.attr("__version__") = "dev";
 }

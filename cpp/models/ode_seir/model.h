@@ -49,25 +49,114 @@ public:
     Model()
         : Base(Populations({InfectionState::Count}, 0.), ParameterSet())
     {
+        auto num_compartments                     = this->populations.get_num_compartments();
+        Eigen::VectorXd StoE                      = Eigen::VectorXd::Zero(num_compartments);
+        StoE[(size_t)InfectionState::Susceptible] = -1;
+        StoE[(size_t)InfectionState::Exposed]     = 1;
+
+        Eigen::VectorXd EtoI                   = Eigen::VectorXd::Zero(num_compartments);
+        EtoI[(size_t)InfectionState::Exposed]  = -1;
+        EtoI[(size_t)InfectionState::Infected] = 1;
+
+        Eigen::VectorXd ItoR                    = Eigen::VectorXd::Zero(num_compartments);
+        ItoR[(size_t)InfectionState::Infected]  = -1;
+        ItoR[(size_t)InfectionState::Recovered] = 1;
+
+        transition_vectors = Eigen::MatrixXd(num_compartments, 3);
+        transition_vectors << StoE, EtoI, ItoR;
+
+        transition_rates = Eigen::VectorXd(transition_vectors.cols());
     }
 
-    void get_derivatives(Eigen::Ref<const Eigen::VectorXd> pop, Eigen::Ref<const Eigen::VectorXd> y, double t,
-                         Eigen::Ref<Eigen::VectorXd> dydt) const override
+    void update_transition_rates(Eigen::Ref<const Eigen::VectorXd> pop, Eigen::Ref<const Eigen::VectorXd> y,
+                                 double t) const
     {
         auto& params     = this->parameters;
         double coeffStoE = params.get<ContactPatterns>().get_matrix_at(t)(0, 0) *
                            params.get<TransmissionProbabilityOnContact>() / populations.get_total();
 
-        dydt[(size_t)InfectionState::Susceptible] =
-            -coeffStoE * y[(size_t)InfectionState::Susceptible] * pop[(size_t)InfectionState::Infected];
-        dydt[(size_t)InfectionState::Exposed] =
-            coeffStoE * y[(size_t)InfectionState::Susceptible] * pop[(size_t)InfectionState::Infected] -
-            (1.0 / params.get<TimeExposed>()) * y[(size_t)InfectionState::Exposed];
-        dydt[(size_t)InfectionState::Infected] =
-            (1.0 / params.get<TimeExposed>()) * y[(size_t)InfectionState::Exposed] -
-            (1.0 / params.get<TimeInfected>()) * y[(size_t)InfectionState::Infected];
-        dydt[(size_t)InfectionState::Recovered] =
-            (1.0 / params.get<TimeInfected>()) * y[(size_t)InfectionState::Infected];
+        // infection term: proportional to S*I
+        transition_rates(0) =
+            coeffStoE * y[(size_t)InfectionState::Susceptible] * pop[(size_t)InfectionState::Infected];
+        // linear term: proportional to E
+        transition_rates(1) =
+            1.0 / params.get<TimeExposed>() * y[(size_t)InfectionState::Exposed];
+        // linear term: proportional to I
+        transition_rates(2) =
+            1.0 / params.get<TimeInfected>() * y[(size_t)InfectionState::Infected];
+    }
+
+//    /*
+//     * @brief updates transition rates but uses relative compartments
+//     */
+//    void update_transition_rates_relative(Eigen::Ref<const Eigen::VectorXd> pop, Eigen::Ref<const Eigen::VectorXd> y,
+//                                          double t) const
+//    {
+//        auto& params     = this->parameters;
+//        double coeffStoE = params.get<ContactPatterns>().get_matrix_at(t)(0, 0) *
+//                           params.get<TransmissionProbabilityOnContact>() / populations.get_total();
+//
+//        // infection term: proportional to S*I
+//        transition_rates(0) = coeffStoE * y[(size_t)InfectionState::Susceptible] / populations.get_total() *
+//                              pop[(size_t)InfectionState::Infected] / populations.get_total();
+//        // linear term: proportional to E
+//        transition_rates(1) =
+//            1.0 / params.get<TimeExposed>() * y[(size_t)InfectionState::Exposed] / populations.get_total();
+//        // linear term: proportional to I
+//        transition_rates(2) =
+//            1.0 / params.get<TimeInfected>() * y[(size_t)InfectionState::Infected] / populations.get_total();
+//    }
+
+    void get_derivatives(Eigen::Ref<const Eigen::VectorXd> pop, Eigen::Ref<const Eigen::VectorXd> y, double t,
+                         Eigen::Ref<Eigen::VectorXd> dydt) const override
+    {
+        //        dydt[(size_t)InfectionState::Susceptible] =
+        //            -coeffStoE * y[(size_t)InfectionState::Susceptible] * pop[(size_t)InfectionState::Infected];
+        //        dydt[(size_t)InfectionState::Exposed] =
+        //            coeffStoE * y[(size_t)InfectionState::Susceptible] * pop[(size_t)InfectionState::Infected] -
+        //            (1.0 / params.get<TimeExposed>()) * y[(size_t)InfectionState::Exposed];
+        //        dydt[(size_t)InfectionState::Infected] =
+        //            (1.0 / params.get<TimeExposed>()) * y[(size_t)InfectionState::Exposed] -
+        //            (1.0 / params.get<TimeInfected>()) * y[(size_t)InfectionState::Infected];
+        //        dydt[(size_t)InfectionState::Recovered] =
+        //            (1.0 / params.get<TimeInfected>()) * y[(size_t)InfectionState::Infected];
+        //        dydt = transition_vectors.col(0) * coeffStoE * y[(size_t)InfectionState::Susceptible] *
+        //               pop[(size_t)InfectionState::Infected];
+        //        dydt += (transition_vectors.col(1) * 1.0 / params.get<TimeExposed>()) * y[(size_t)InfectionState::Exposed];
+        //        dydt += (transition_vectors.col(2) * 1.0 / params.get<TimeInfected>()) * y[(size_t)InfectionState::Infected];
+        this->update_transition_rates(pop, y, t);
+        dydt = transition_vectors * transition_rates;
+    }
+
+    void get_noise_correlation(Eigen::Ref<const Eigen::VectorXd> pop, Eigen::Ref<const Eigen::VectorXd> y, double t,
+                               Eigen::Ref<Eigen::MatrixXd> noise_correlation) const override
+    {
+        this->update_transition_rates(pop, y, t);
+        Eigen::MatrixXd scaled_transition_vectors = transition_vectors;
+        for (long i = 0; i < scaled_transition_vectors.cols(); ++i) {
+            scaled_transition_vectors.col(i) *= this->transition_rates(i);
+        }
+        noise_correlation = scaled_transition_vectors * transition_vectors.transpose();
+    }
+
+    void get_drift(Eigen::Ref<const Eigen::VectorXd> pop, Eigen::Ref<const Eigen::VectorXd> y, double t,
+                   Eigen::Ref<Eigen::MatrixXd> drift) const override
+    {
+        auto& params     = this->parameters;
+        double coeffStoE = params.get<ContactPatterns>().get_matrix_at(t)(0, 0) *
+                           params.get<TransmissionProbabilityOnContact>() / populations.get_total();
+
+        update_transition_rates(pop, y, t);
+        Eigen::VectorXd dtransition_0_dx(y.rows());
+        dtransition_0_dx << coeffStoE * y[2], 0, coeffStoE * y[0] , 0;
+        Eigen::VectorXd dtransition_1_dx(y.rows());
+        dtransition_1_dx << 0, 1. / params.get<TimeExposed>(), 0, 0;
+        Eigen::VectorXd dtransition_2_dx(y.rows());
+        dtransition_2_dx << 0, 0, 1. / params.get<TimeInfected>(), 0;
+
+        drift = transition_vectors.col(0) * dtransition_0_dx.transpose() +
+                transition_vectors.col(1) * dtransition_1_dx.transpose() +
+                transition_vectors.col(2) * dtransition_2_dx.transpose();
     }
 
     /**
@@ -138,6 +227,11 @@ public:
         auto result = linear_interpolation(t_value, y.get_time(time_late - 1), y.get_time(time_late), y1, y2);
         return mio::success(static_cast<ScalarType>(result));
     }
+
+private:
+    mutable Eigen::MatrixXd transition_vectors;
+    mutable Eigen::VectorXd transition_rates;
+    mutable Eigen::MatrixXd dtransition_ratesdY;
 };
 
 } // namespace oseir

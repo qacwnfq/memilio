@@ -1,5 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+_skbuild/
+
 # dependencies
 /.pnp
 .pnp.js
@@ -276,3 +278,4 @@ docs/html
 docs/xml
 
 # End of https://www.gitignore.io/api/c++,node,python
+#
