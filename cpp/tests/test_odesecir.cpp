@@ -873,3 +873,9 @@ TEST(Secir, check_constraints_parameters)
     model.parameters.set<mio::osecir::DeathsPerCritical>(1.1);
     ASSERT_EQ(model.parameters.check_constraints(), 1);
 }
+
+TEST(TestSecir, estimate_likelihood)
+{
+// TODO FJ: implement
+    ASSERT_EQ(true, false);
+}

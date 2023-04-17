@@ -151,3 +151,9 @@ TEST(TestSeir, check_constraints_parameters)
     model.parameters.set<mio::oseir::TransmissionProbabilityOnContact>(10.);
     ASSERT_EQ(model.parameters.check_constraints(), 1);
 }
+
+TEST(TestSeir, estimate_likelihood)
+{
+// TODO FJ: implement
+    ASSERT_EQ(true, false);
+}

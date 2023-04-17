@@ -182,4 +182,4 @@ TimeSeries<ScalarType> simulate(double t0, double tmax, double dt, Model const& 
 
 } // namespace mio
 
-#endif // POPULATIONS_H
+#endif // SIMULATION_H
