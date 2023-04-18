@@ -151,3 +151,68 @@ TEST(TestSeir, check_constraints_parameters)
     model.parameters.set<mio::oseir::TransmissionProbabilityOnContact>(10.);
     ASSERT_EQ(model.parameters.check_constraints(), 1);
 }
+
+TEST(TestSeir, compute_noise_correlation)
+{
+    Eigen::MatrixXd expected_noise_correlation(4, 4);
+    expected_noise_correlation << 2.51550178e-06, -2.51550178e-06, 0.00000000e00, 0.00000000e00, -2.51550178e-06,
+        6.71092337e-03, -6.70840787e-03, 0.00000000e00, 0.00000000e00, -6.70840787e-03, 1.05843769e-02, -3.87596899e-03,
+        0.00000000e00, 0.00000000e00, -3.87596899e-03, 3.87596899e-03;
+
+    mio::oseir::Model model;
+    model.parameters.set<mio::oseir::TimeExposed>(5.2);
+    model.parameters.set<mio::oseir::TimeInfected>(6);
+    model.parameters.set<mio::oseir::TransmissionProbabilityOnContact>(1);
+    model.parameters.get<mio::oseir::ContactPatterns>().get_baseline()(0, 0) = 1;
+
+    double total_population                                                                            = 8600;
+    model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Exposed)}]   = 300;
+    model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Infected)}]  = 200;
+    model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Recovered)}] = 100;
+    model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Susceptible)}] =
+        total_population -
+        model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Exposed)}] -
+        model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Infected)}] -
+        model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Recovered)}];
+
+    double t = 0.;
+
+    Eigen::MatrixXd actual_noise_correlation(model.populations.get_num_compartments(),
+                                             model.populations.get_num_compartments());
+
+    model.get_noise_correlation(model.populations.get_compartments(), model.populations.get_compartments(), t,
+                                actual_noise_correlation);
+
+    ASSERT_TRUE(actual_noise_correlation.isApprox(expected_noise_correlation, 1e-5));
+}
+
+TEST(TestSeir, compute_drift)
+{
+    Eigen::MatrixXd expected_drift(4, 4);
+    expected_drift << -2.70416441e-06, 0.00000000e00, -1.08166577e-04, 0.00000000e00, 2.70416441e-06, -1.92307692e-01,
+        1.08166577e-04, 0.00000000e00, 0.00000000e00, 1.92307692e-01, -1.66666667e-01, 0.00000000e00, 0.00000000e00,
+        0.00000000e00, 1.66666667e-01, 0.00000000e00;
+
+    mio::oseir::Model model;
+    model.parameters.set<mio::oseir::TimeExposed>(5.2);
+    model.parameters.set<mio::oseir::TimeInfected>(6);
+    model.parameters.set<mio::oseir::TransmissionProbabilityOnContact>(1);
+    model.parameters.get<mio::oseir::ContactPatterns>().get_baseline()(0, 0) = 1;
+
+    double total_population                                                                            = 8600;
+    model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Exposed)}]   = 300;
+    model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Infected)}]  = 200;
+    model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Recovered)}] = 100;
+    model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Susceptible)}] =
+        total_population -
+        model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Exposed)}] -
+        model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Infected)}] -
+        model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Recovered)}];
+
+    double t = 0.;
+
+    Eigen::MatrixXd actual_drift(model.populations.get_num_compartments(), model.populations.get_num_compartments());
+    model.get_drift(model.populations.get_compartments(), model.populations.get_compartments(), t, actual_drift);
+
+    ASSERT_TRUE(actual_drift.isApprox(expected_drift, 1e-5));
+}

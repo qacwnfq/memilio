@@ -22,7 +22,6 @@
 
 #include "memilio/config.h"
 #include "memilio/compartments/compartmentalmodel.h"
-#include "memilio/data/analyze_result.h"
 #include "memilio/utils/metaprogramming.h"
 #include "memilio/math/stepper_wrapper.h"
 #include "memilio/utils/time_series.h"
@@ -227,17 +226,14 @@ TimeSeries<ScalarType> simulate(double t0, double tmax, double dt, Model const& 
 ////}
 
 template <class Model, class Sim = Simulation<Model>>
-Eigen::MatrixXd compute_noise_correlation(double t, Model const& model, Sim const& reference)
+Eigen::MatrixXd compute_noise_correlation(double, Model const&, Sim const&)
 {
-
-//                       // interpoliere
-//                       -> num_time_points check
-//                       -> get_time bringt wert für index i und  -> wo ist nächstgrößerer oder kleiner
-//                       VectorXd compartments = reference.get_results().get_time(t);
-    return Eigen::MatrixXd::Zero(1);
+    //                       // interpoliere
+    //                       -> num_time_points check
+    //                       -> get_time bringt wert für index i und  -> wo ist nächstgrößerer oder kleiner
+    //                       VectorXd compartments = reference.get_results().get_time(t);
+    return Eigen::MatrixXd::Zero(1, 1);
 }
-
-
 
 } // namespace mio
 
