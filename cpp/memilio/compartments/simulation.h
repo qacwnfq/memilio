@@ -180,61 +180,6 @@ TimeSeries<ScalarType> simulate(double t0, double tmax, double dt, Model const& 
     return sim.get_result();
 }
 
-///**
-// * @brief simulate simulates a compartmental model
-// * @param[in] t0 start time
-// * @param[in] tmax end time
-// * @param[in] dt initial step size of integration
-// * @param[in] model: An instance of a compartmental model
-// * @return a TimeSeries to represent the final simulation result
-// * @tparam Model a compartment model type
-// * @tparam Sim a simulation type that can simulate the model.
-// */
-//template <class Model, class Sim = Simulation<Model>>
-//TimeSeries<ScalarType> compute_likelihood(double t0, double tmax, double dt, Model const& model,
-//                                std::shared_ptr<IntegratorCore> integrator = nullptr)
-//{
-////    auto ts = simulate();
-////
-////    B =model.compuate_B(); model.compute_J();
-////    model.check_constraints();
-////    Sim sim(model, t0, dt);
-////    if (integrator) {
-////        sim.set_integrator(integrator);
-////    }
-////    sim.advance(tmax);
-////    return sim.get_result();
-////    TODO FJ: implement
-//}
-//
-//// Model als template parameter (falls es verallgemeinerbar ist), sonst mehrere funktionen auc hhier
-//// simulation als emplate parameter wie oben
-//// model als const reference
-//// model weiß wie viele altersgruppen! Achtung: Jede altersgruppe hat eigene
-//// num_age_gruppe als integer und wenn = 1 dann frag nicht nach altersgruppen (oder seir modell updaten, damit es get_age_groups hat) (parameterSset get_num_groups spendieren) Age group includen, return 1
-//// model.parameters.get_nums()
-////template <>
-////compute_Matrix(time_series = simulation.get_result();  // indices! zeilen compartments, spalten zeitpunkte, get_flat_index() -> get infection state, damit code leserbar ist
-////
-////template <class Model, class Sim = Simulation<Model>, template FP>
-////Eigen::MatrixXd compute_J_matrix(double t, Model const& model, Sim const& reference)
-////{
-////                       // interpoliere
-////                       -> num_time_points check
-////                       -> get_time bringt wert für index i und  -> wo ist nächstgrößerer oder kleiner
-////                       VectorXd compartments = reference.get_results().get_time(t);
-////}
-
-template <class Model, class Sim = Simulation<Model>>
-Eigen::MatrixXd compute_noise_correlation(double, Model const&, Sim const&)
-{
-    //                       // interpoliere
-    //                       -> num_time_points check
-    //                       -> get_time bringt wert für index i und  -> wo ist nächstgrößerer oder kleiner
-    //                       VectorXd compartments = reference.get_results().get_time(t);
-    return Eigen::MatrixXd::Zero(1, 1);
-}
-
 } // namespace mio
 
 #endif // SIMULATION_H

@@ -22,6 +22,7 @@
 
 #include <algorithm>
 #include <cassert>
+#include <numeric>
 
 namespace mio
 {
