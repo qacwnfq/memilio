@@ -70,6 +70,27 @@ public:
                            params.get<TransmissionProbabilityOnContact>() / populations.get_total();
 
         // infection term: proportional to S*I
+        transition_rates(0) =
+            coeffStoE * y[(size_t)InfectionState::Susceptible] * pop[(size_t)InfectionState::Infected];
+        // linear term: proportional to E
+        transition_rates(1) =
+            1.0 / params.get<TimeExposed>() * y[(size_t)InfectionState::Exposed];
+        // linear term: proportional to I
+        transition_rates(2) =
+            1.0 / params.get<TimeInfected>() * y[(size_t)InfectionState::Infected];
+    }
+
+    /*
+     * @brief updates transition rates but uses relative compartments
+     */
+    void update_transition_rates_relative(Eigen::Ref<const Eigen::VectorXd> pop, Eigen::Ref<const Eigen::VectorXd> y,
+                                          double t) const
+    {
+        auto& params     = this->parameters;
+        double coeffStoE = params.get<ContactPatterns>().get_matrix_at(t)(0, 0) *
+                           params.get<TransmissionProbabilityOnContact>() / populations.get_total();
+
+        // infection term: proportional to S*I
         transition_rates(0) = coeffStoE * y[(size_t)InfectionState::Susceptible] / populations.get_total() *
                               pop[(size_t)InfectionState::Infected] / populations.get_total();
         // linear term: proportional to E
@@ -104,7 +125,7 @@ public:
     void get_noise_correlation(Eigen::Ref<const Eigen::VectorXd> pop, Eigen::Ref<const Eigen::VectorXd> y, double t,
                                Eigen::Ref<Eigen::MatrixXd> noise_correlation) const override
     {
-        this->update_transition_rates(pop, y, t);
+        this->update_transition_rates_relative(pop, y, t);
         Eigen::MatrixXd scaled_transition_vectors = transition_vectors;
         for (long i = 0; i < scaled_transition_vectors.cols(); ++i) {
             scaled_transition_vectors.col(i) *= this->transition_rates(i);
@@ -119,7 +140,7 @@ public:
         double coeffStoE = params.get<ContactPatterns>().get_matrix_at(t)(0, 0) *
                            params.get<TransmissionProbabilityOnContact>() / populations.get_total();
 
-        update_transition_rates(pop, y, t);
+        update_transition_rates_relative(pop, y, t);
         Eigen::VectorXd dtransition_0_dx(y.rows());
         dtransition_0_dx << coeffStoE * pop[2] / populations.get_total(), 0,
             coeffStoE * pop[0] / populations.get_total(), 0;
