@@ -23,6 +23,9 @@
 #include "memilio/compartments/simulation.h"
 #include "memilio/data/analyze_result.h"
 
+#include <Eigen/Core>
+#include <Eigen/Cholesky>
+
 namespace mio
 {
 
@@ -70,16 +73,17 @@ public:
             Eigen::VectorXd next_simulated =
                 interpolate_simulation_result(integrator.get_result(), std::vector<double>{next_time}).get_value(0);
 
-            Eigen::MatrixXd cov = estimate_cond_cov(next_simulated, current_time, next_time, dt);
+            Eigen::MatrixXd cov     = this->estimate_cond_cov(next_simulated, current_time, next_time, dt);
             Eigen::VectorXd rel_dev = (next_simulated - next_state) / m_model->populations.get_total();
 
-            logp -= rel_dev * rel_dev / (2*m_model->populations.get_total);
+            Eigen::vectorXd inv_cov_dev = cov.llt().solve(rel_dev);
+
+            logp -= static_cast<decltype(logp)>(rel_dev.transpose() * rel_dev) / (2.) * m_model->populations.get_total();
         }
         return logp;
     }
 
-    template <class Model>
-    Eigen::MatrixXd estimate_cond_cov(Eigen::Ref<Eigen::VectorXd> x, double t1, double t2, double dt)
+    Eigen::MatrixXd estimate_cond_cov(Eigen::VectorXd& x, double t1, double t2, double dt)
     {
         auto num_comp          = m_model->populations.get_num_compartments();
         Eigen::MatrixXd sigma0 = Eigen::MatrixXd::Zero(num_comp, num_comp);
@@ -89,17 +93,15 @@ public:
         Eigen::Map<Eigen::VectorXd> sigma0_vec(sigma0.data(), sigma0.rows() + sigma0.cols(), 1);
 
         OdeIntegrator integrator(
-            [&model = *m_model, &x, &drift, &noise_correlation](auto&& y, auto&& t, auto&& dydt) {
-                model.eval_right_hand_side(y, y, t, dydt);
+            [&model = *m_model, &x, &drift, &noise_correlation](auto&& y, auto&& t, auto&& dsig_dt_vec) {
                 model.get_drift(x, x, t, drift);
                 model.get_noise_correlation(x, x, t, drift);
 
-                Eigen::Map<Eigen::MatrixXd> sig(y.data, drift.rows(), drift.cols());
+                const Eigen::MatrixXd sig = Eigen::Map<const Eigen::MatrixXd>(y.data(), drift.rows(), drift.cols());
                 // sig is symmetric
                 Eigen::MatrixXd dsig_dt = sig * drift.transpose() + drift * sig + noise_correlation;
 
-                Eigen::Map<Eigen::VectorXd> dsig_dt_vec(dsig_dt.data(), dsig_dt.rows() + dsig_dt.cols(), 1);
-                return dsig_dt_vec;
+                dsig_dt_vec = Eigen::Map<Eigen::VectorXd>(dsig_dt.data(), dsig_dt.rows() + dsig_dt.cols(), 1);
             },
             t1, sigma0_vec, dt, m_integratorCore);
 
