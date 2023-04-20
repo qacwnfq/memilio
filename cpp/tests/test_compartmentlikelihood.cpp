@@ -82,6 +82,6 @@ TEST(TestCompartmentLikelihood, computeLikelihoodOseir)
     observations.add_time_point(10.) = obs10;
 
     double like = likelihood.compute(observations);
-    std::cout << "like" << like << std::endl;
-    std::cout << "expected like" << expectedLikelihood << std::endl;
+    std::cout << "like " << like << std::endl;
+    std::cout << "expected like " << expectedLikelihood << std::endl;
 }

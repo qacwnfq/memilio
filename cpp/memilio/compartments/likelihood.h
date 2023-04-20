@@ -26,6 +26,8 @@
 #include <Eigen/Core>
 #include <Eigen/Cholesky>
 
+#include <boost/numeric/odeint/stepper/runge_kutta_cash_karp54.hpp>
+
 namespace mio
 {
 
@@ -54,7 +56,7 @@ public:
     {
     }
 
-    auto compute(TimeSeries<double> observed, double dt = 0.1)
+    auto compute(TimeSeries<double> observed, double dt = 0.1, double eps = 1e-13)
     {
         double logp = 0.;
         for (auto i = 0; i < observed.get_num_time_points() - 1; ++i) {
@@ -76,11 +78,33 @@ public:
             Eigen::MatrixXd cov     = this->estimate_cond_cov(next_simulated, current_time, next_time, dt);
             Eigen::VectorXd rel_dev = (next_simulated - next_state) / m_model->populations.get_total();
 
-            Eigen::vectorXd inv_cov_dev = cov.llt().solve(rel_dev);
+            Eigen::SelfAdjointEigenSolver<Eigen::MatrixXd> solver(cov);
+            Eigen::VectorXd es = solver.eigenvalues();
+            double ldet         =  1;
 
-            logp -= static_cast<decltype(logp)>(rel_dev.transpose() * rel_dev) / (2.) * m_model->populations.get_total();
+            for (Eigen::Index j = 0; j < es.rows(); ++j) {
+                if (es(j) < eps) {
+                    es(j) = 0;
+                }
+                else {
+                    ldet += std::log(es(j));
+                    es(j) = 1. / es(j);
+                }
+            }
+            Eigen::MatrixXd evs = solver.eigenvectors();
+            Eigen::VectorXd inv_cov_dev = (evs * es.asDiagonal() * evs.transpose()) * rel_dev;
+
+            logp -=
+                static_cast<decltype(logp)>(rel_dev.transpose() * inv_cov_dev) * m_model->populations.get_total() / 2;
+            // TODO get boost pi
+            double num_comparts = m_model->populations.get_num_compartments();
+            double num_age_groups = 1; // hard coded for now
+            double dim = num_comparts * num_age_groups;
+            logp -= dim / 2 * std::log(2 * 3.14159);
+            logp -= (ldet - dim * std::log(m_model->populations.get_total())) / 2;
+            logp -= dim * std::log(m_model->populations.get_total());
         }
-        return logp;
+        return -logp;
     }
 
     Eigen::MatrixXd estimate_cond_cov(Eigen::VectorXd& x, double t1, double t2, double dt)
@@ -95,7 +119,7 @@ public:
         OdeIntegrator integrator(
             [&model = *m_model, &x, &drift, &noise_correlation](auto&& y, auto&& t, auto&& dsig_dt_vec) {
                 model.get_drift(x, x, t, drift);
-                model.get_noise_correlation(x, x, t, drift);
+                model.get_noise_correlation(x, x, t, noise_correlation);
 
                 const Eigen::MatrixXd sig = Eigen::Map<const Eigen::MatrixXd>(y.data(), drift.rows(), drift.cols());
                 // sig is symmetric
@@ -141,27 +165,7 @@ public:
 private:
     std::shared_ptr<IntegratorCore> m_integratorCore;
     std::unique_ptr<Model> m_model;
-}; // namespace mio
-
-/**
- * Defines the return type of the `advance` member function of a type.
- * Template is invalid if this member function does not exist.
- * @tparam Sim a compartment model simulation type.
- */
-template <class Sim>
-using advance_expr_t = decltype(std::declval<Sim>().advance(std::declval<double>()));
-
-/**
- * Template meta function to check if a type is a compartment model simulation.
- * Defines a static constant of name `value`.
- * The constant `value` will be equal to true if Sim is a valid compartment simulation type.
- * Otherwise, `value` will be equal to false.
- * @tparam Sim a type that may or may not be a compartment model simulation.
- */
-template <class Sim>
-using is_compartment_model_simulation =
-    std::integral_constant<bool, (is_expression_valid<advance_expr_t, Sim>::value &&
-                                  is_compartment_model<typename Sim::Model>::value)>;
+};
 
 } // namespace mio
 
