@@ -75,12 +75,12 @@ public:
             Eigen::VectorXd next_simulated =
                 interpolate_simulation_result(integrator.get_result(), std::vector<double>{next_time}).get_value(0);
 
-            Eigen::MatrixXd cov     = this->estimate_cond_cov(next_simulated, current_time, next_time, dt);
-            Eigen::VectorXd rel_dev = (next_simulated - next_state) / m_model->populations.get_total();
+            Eigen::MatrixXd cov = this->estimate_cond_cov(next_simulated, current_time, next_time, dt);
+            Eigen::VectorXd dev = (next_state - next_simulated);
 
             Eigen::SelfAdjointEigenSolver<Eigen::MatrixXd> solver(cov);
             Eigen::VectorXd es = solver.eigenvalues();
-            double ldet         =  1;
+            double ldet        = 0;
 
             for (Eigen::Index j = 0; j < es.rows(); ++j) {
                 if (es(j) < eps) {
@@ -91,31 +91,31 @@ public:
                     es(j) = 1. / es(j);
                 }
             }
-            Eigen::MatrixXd evs = solver.eigenvectors();
-            Eigen::VectorXd inv_cov_dev = (evs * es.asDiagonal() * evs.transpose()) * rel_dev;
+            Eigen::MatrixXd evs         = solver.eigenvectors();
+            Eigen::VectorXd inv_cov_dev = (evs * es.asDiagonal() * evs.transpose()) * dev;
 
-            logp -=
-                static_cast<decltype(logp)>(rel_dev.transpose() * inv_cov_dev) * m_model->populations.get_total() / 2;
+            std::cout << "t:" << current_time << std::endl;
+            std::cout << "t_n:" << next_time << std::endl;
+            std::cout << "cov" << cov << std::endl;
+            std::cout << "dev" << dev.transpose() << std::endl;
             // TODO get boost pi
-            double num_comparts = m_model->populations.get_num_compartments();
+            double num_comparts   = m_model->populations.get_num_compartments();
             double num_age_groups = 1; // hard coded for now
-            double dim = num_comparts * num_age_groups;
-            logp -= dim / 2 * std::log(2 * 3.14159);
-            logp -= (ldet - dim * std::log(m_model->populations.get_total())) / 2;
-            logp -= dim * std::log(m_model->populations.get_total());
+            double dim            = num_comparts * num_age_groups;
+            logp -= static_cast<decltype(logp)>(dev.transpose() * inv_cov_dev) / 2;
+            logp -= dim / 2 * std::log(2 * 3.14159) - ldet / 2;
         }
-        return -logp;
+        return logp;
     }
 
     Eigen::MatrixXd estimate_cond_cov(Eigen::VectorXd& x, double t1, double t2, double dt)
     {
-        auto num_comp          = m_model->populations.get_num_compartments();
-        Eigen::MatrixXd sigma0 = Eigen::MatrixXd::Zero(num_comp, num_comp);
+        auto num_comp = m_model->populations.get_num_compartments();
         Eigen::MatrixXd drift(num_comp, num_comp);
         Eigen::MatrixXd noise_correlation(num_comp, num_comp);
+        Eigen::VectorXd sigma0_vec = Eigen::VectorXd(num_comp * num_comp);
 
-        Eigen::Map<Eigen::VectorXd> sigma0_vec(sigma0.data(), sigma0.rows() + sigma0.cols(), 1);
-
+        // TODO FJ: x has to be updated here
         OdeIntegrator integrator(
             [&model = *m_model, &x, &drift, &noise_correlation](auto&& y, auto&& t, auto&& dsig_dt_vec) {
                 model.get_drift(x, x, t, drift);
@@ -125,7 +125,7 @@ public:
                 // sig is symmetric
                 Eigen::MatrixXd dsig_dt = sig * drift.transpose() + drift * sig + noise_correlation;
 
-                dsig_dt_vec = Eigen::Map<Eigen::VectorXd>(dsig_dt.data(), dsig_dt.rows() + dsig_dt.cols(), 1);
+                dsig_dt_vec = Eigen::Map<Eigen::VectorXd>(dsig_dt.data(), y.rows(), y.cols());
             },
             t1, sigma0_vec, dt, m_integratorCore);
 

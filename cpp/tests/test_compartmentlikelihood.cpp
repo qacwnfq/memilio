@@ -24,7 +24,7 @@
 
 TEST(TestCompartmentLikelihood, computeLikelihoodOseir)
 {
-    double expectedLikelihood = 38.584080700213570;
+    double expectedLikelihood = 84.13888188888475;
 
     mio::oseir::Model model;
     model.parameters.set<mio::oseir::TimeExposed>(5.2);
@@ -43,31 +43,31 @@ TEST(TestCompartmentLikelihood, computeLikelihoodOseir)
         model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Recovered)}];
 
     mio::Likelihood<decltype(model)> likelihood(model);
-    // TODO FJ
+
     // random observations were simulated using stochastic differential equations and pyross
     mio::TimeSeries<double> observations(4);
     Eigen::VectorXd obs0(4);
-    obs0 << 8000, 300, 200, 100;
+    obs0 << 8.000e+03,3.000e+02, 2.000e+02, 1.000e+02;
     Eigen::VectorXd obs1(4);
-    obs1 << 7796, 438, 221, 145;
+    obs1 << 7.797e+03,4.350e+02, 2.340e+02, 1.340e+02;
     Eigen::VectorXd obs2(4);
-    obs2 << 7574, 560, 283, 183;
+    obs2 << 7.571e+03,5.750e+02, 2.800e+02, 1.740e+02;
     Eigen::VectorXd obs3(4);
-    obs3 << 7300, 707, 366, 227;
+    obs3 << 7.296e+03,7.230e+02, 3.630e+02, 2.180e+02;
     Eigen::VectorXd obs4(4);
-    obs4 << 6977, 888, 450, 285;
+    obs4 << 6.919e+03,9.440e+02, 4.560e+02, 2.810e+02;
     Eigen::VectorXd obs5(4);
-    obs5 << 6617, 1071, 526, 386;
+    obs5 << 6.528e+03,1.159e+03, 5.510e+02, 3.620e+02;
     Eigen::VectorXd obs6(4);
-    obs6 << 6188, 1287, 640, 485;
+    obs6 << 6.066e+03,1.365e+03, 7.050e+02, 4.640e+02;
     Eigen::VectorXd obs7(4);
-    obs7 << 5681, 1519, 813, 587;
+    obs7 << 5.529e+03, 1.599e+03, 8.880e+02, 5.840e+02;
     Eigen::VectorXd obs8(4);
-    obs8 << 5116, 1769, 983, 732;
+    obs8 << 4.930e+03, 1.849e+03, 1.050e+03, 7.710e+02;
     Eigen::VectorXd obs9(4);
-    obs9 << 4473, 2013, 1190, 924;
+    obs9 << 4.320e+03, 2.120e+03, 1.193e+03, 9.670e+02;
     Eigen::VectorXd obs10(4);
-    obs10 << 3857, 2210, 1404, 1129;
+    obs10 << 3.757e+03, 2.270e+03, 1.402e+03, 1.171e+03;
 
     observations.add_time_point(0.) = obs0;
     observations.add_time_point(1.) = obs1;
