@@ -142,8 +142,7 @@ public:
 
         update_transition_rates(pop, y, t);
         Eigen::VectorXd dtransition_0_dx(y.rows());
-        dtransition_0_dx << coeffStoE * pop[2] / populations.get_total(), 0,
-            coeffStoE * pop[0] / populations.get_total(), 0;
+        dtransition_0_dx << coeffStoE * y[2], 0, coeffStoE * y[0] , 0;
         Eigen::VectorXd dtransition_1_dx(y.rows());
         dtransition_1_dx << 0, 1. / params.get<TimeExposed>(), 0, 0;
         Eigen::VectorXd dtransition_2_dx(y.rows());

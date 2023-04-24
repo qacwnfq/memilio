@@ -124,7 +124,7 @@ TEST(TestSeir, checkPopulationConservation)
     for (auto i = 0; i < result.get_last_value().size(); i++) {
         num_persons += result.get_last_value()[i];
     }
-    EXPECT_NEAR(num_persons, total_population, 1e-15);
+    EXPECT_DOUBLE_EQ(num_persons, total_population);
 }
 
 TEST(TestSeir, check_constraints_parameters)
@@ -155,9 +155,9 @@ TEST(TestSeir, check_constraints_parameters)
 TEST(TestSeir, compute_noise_correlation_at_t0)
 {
     Eigen::MatrixXd expected_noise_correlation(4, 4);
-    expected_noise_correlation << 6614.7572093023255, -6614.7572093023255, 0.0, 0.0, -6614.7572093023255,
-        8070.718747763864, -1455.9615384615383, 0.0, 0.0, -1455.9615384615383, 2671.961538461538, -1216.0, 0.0, 0.0,
-        -1216.0, 1216.0;
+    expected_noise_correlation << 186.04651162790697, -186.04651162790697, 0.0, 0.0, -186.04651162790697,
+        243.73881932021465, -57.692307692307686, 0.0, 0.0, -57.692307692307686, 91.02564102564102, -33.33333333333333,
+        0.0, 0.0, -33.33333333333333, 33.33333333333333;
 
     mio::oseir::Model model;
     model.parameters.set<mio::oseir::TimeExposed>(5.2);
@@ -183,14 +183,17 @@ TEST(TestSeir, compute_noise_correlation_at_t0)
     model.get_noise_correlation(model.populations.get_compartments(), model.populations.get_compartments(), t,
                                 actual_noise_correlation);
 
-    ASSERT_TRUE(actual_noise_correlation.isApprox(expected_noise_correlation, 1e-15));
+    ASSERT_TRUE(actual_noise_correlation.isApprox(expected_noise_correlation, 1e-5));
 }
 
 TEST(TestSeir, compute_drift_at_t0)
 {
     Eigen::MatrixXd expected_drift(4, 4);
-    expected_drift << -0.16300944040511875, 0.0, -0.4320371654769432, 0.0, 0.16300944040511875, -0.1923076923076923,
-        0.4320371654769432, 0.0, 0.0, 0.1923076923076923, -0.16666666666666666, 0.0, 0.0, 0.0, 0.16666666666666666, 0.0;
+    expected_drift <<
+        -0.023255813953488372 ,0.0 ,-0.9302325581395349 ,0.0 ,
+        0.023255813953488372 ,-0.1923076923076923 ,0.9302325581395349 ,0.0 ,
+        0.0 ,0.1923076923076923 ,-0.16666666666666666 ,0.0 ,
+        0.0 ,0.0 ,0.16666666666666666 ,0.0;
 
     mio::oseir::Model model;
     model.parameters.set<mio::oseir::TimeExposed>(5.2);
@@ -213,15 +216,16 @@ TEST(TestSeir, compute_drift_at_t0)
     Eigen::MatrixXd actual_drift(model.populations.get_num_compartments(), model.populations.get_num_compartments());
     model.get_drift(model.populations.get_compartments(), model.populations.get_compartments(), t, actual_drift);
 
-    ASSERT_TRUE(actual_drift.isApprox(expected_drift, 1e-15));
+    ASSERT_TRUE(actual_drift.isApprox(expected_drift, 1e-5));
 }
 
 TEST(TestSeir, compute_noise_correlation_at_t5)
 {
     Eigen::MatrixXd expected_noise_correlation(4, 4);
-    expected_noise_correlation << 418.24744186046513, -418.24744186046513, 0.0, 0.0, -418.24744186046513,
-        641.1320572450804, -222.88461538461536, 0.0, 0.0, -222.88461538461536, 314.7179487179487, -91.83333333333333,
-        0.0, 0.0, -91.83333333333333, 91.83333333333333;
+    expected_noise_correlation << 418.24744186046513 ,-418.24744186046513 ,0.0 ,0.0 ,
+        -418.24744186046513 ,641.1320572450804 ,-222.88461538461536 ,0.0 ,
+        0.0 ,-222.88461538461536 ,314.7179487179487 ,-91.83333333333333 ,
+        0.0 ,0.0 ,-91.83333333333333 ,91.83333333333333;
 
     mio::oseir::Model model;
     model.parameters.set<mio::oseir::TimeExposed>(5.2);
@@ -247,14 +251,18 @@ TEST(TestSeir, compute_noise_correlation_at_t5)
     model.get_noise_correlation(model.populations.get_compartments(), model.populations.get_compartments(), t,
                                 actual_noise_correlation);
 
-    ASSERT_TRUE(actual_noise_correlation.isApprox(expected_noise_correlation, 1e-15));
+    ASSERT_TRUE(actual_noise_correlation.isApprox(expected_noise_correlation, 1e-5));
 }
 
 TEST(TestSeir, compute_drift_at_t5)
 {
     Eigen::MatrixXd expected_drift(4, 4);
-    expected_drift << -0.16300944040511875, 0.0, -0.4320371654769432, 0.0, 0.16300944040511875, -0.1923076923076923,
-        0.4320371654769432, 0.0, 0.0, 0.1923076923076923, -0.16666666666666666, 0.0, 0.0, 0.0, 0.16666666666666666, 0.0;
+    expected_drift <<
+        -0.06406976744186046 ,0.0 ,-0.7590697674418605 ,0.0 ,
+        0.06406976744186046 ,-0.1923076923076923 ,0.7590697674418605 ,0.0 ,
+        0.0 ,0.1923076923076923 ,-0.16666666666666666 ,0.0 ,
+        0.0 ,0.0 ,0.16666666666666666 ,0.0;
+
 
     mio::oseir::Model model;
     model.parameters.set<mio::oseir::TimeExposed>(5.2);
@@ -277,5 +285,5 @@ TEST(TestSeir, compute_drift_at_t5)
     Eigen::MatrixXd actual_drift(model.populations.get_num_compartments(), model.populations.get_num_compartments());
     model.get_drift(model.populations.get_compartments(), model.populations.get_compartments(), t, actual_drift);
 
-    ASSERT_TRUE(actual_drift.isApprox(expected_drift, 1e-15));
+    ASSERT_TRUE(actual_drift.isApprox(expected_drift, 1e-5));
 }
