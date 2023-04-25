@@ -147,8 +147,9 @@ TEST(TestCompartmentLikelihood, benchmark)
     observations.add_time_point(10.) = obs10;
 
     auto t1 = std::chrono::high_resolution_clock::now();
+    volatile double writeMe = 0;
     for(int i=0; i<10; ++i) {
-         likelihood.compute(observations);
+         writeMe = likelihood.compute(observations);
     }
     auto t2 = std::chrono::high_resolution_clock::now();
 
@@ -158,6 +159,7 @@ TEST(TestCompartmentLikelihood, benchmark)
     /* Getting number of milliseconds as a double. */
     std::chrono::duration<double, std::milli> ms_double = t2 - t1;
 
+    std::cout << "likelihood: " << writeMe << "\n";
     std::cout << ms_int.count() << "ms\n";
     std::cout << ms_double.count() << "ms\n";
 }
