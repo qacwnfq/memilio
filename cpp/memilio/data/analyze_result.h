@@ -21,6 +21,7 @@
 #define MEMILIO_DATA_ANALYZE_RESULT_H
 
 #include "memilio/utils/time_series.h"
+#include "memilio/mobility/meta_mobility_instant.h"
 
 #include <functional>
 #include <vector>
@@ -106,9 +107,9 @@ std::vector<TimeSeries<double>> ensemble_percentile(const std::vector<std::vecto
  * @param graph_result graph of simulations whose results will be interpolated
  * @return one interpolated time series per node
  */
-template <class Graph>
+template <class Simulation>
 std::vector<TimeSeries<double>>
-interpolate_simulation_result(const Graph& graph_result)
+interpolate_simulation_result(const Graph<SimulationNode<Simulation>, MigrationEdge>& graph_result)
 {
     std::vector<TimeSeries<double>> interpolated;
     interpolated.reserve(graph_result.nodes().size());
