@@ -45,10 +45,10 @@ public:
     using Model = M;
 
     /**
-     * @brief setup the simulation with an ODE solver
+     * @brief setup the likelihood using an ODE solver
      * @param[in] model: An instance of a compartmental model
-     * @param[in] t0 start time
-     * @param[in] dt initial step size of integration
+     * @param[in] atol absolute error tolerance for ODE solver
+     * @param[in] rtol absolute error tolerance for ODE solver
      */
     explicit Likelihood(Model const& model)
         : m_integratorCore(
@@ -179,6 +179,7 @@ public:
 
 private:
     std::shared_ptr<IntegratorCore> m_integratorCore;
+    // TODO FJ: model will be cloned on every likelihood evaluation. Is this okay for performance?
     std::unique_ptr<Model> m_model;
 };
 

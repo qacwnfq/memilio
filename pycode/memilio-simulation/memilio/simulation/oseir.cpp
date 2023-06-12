@@ -92,9 +92,8 @@ PYBIND11_MODULE(_simulation_oseir, m)
             // const Eigen::MatrixXd& filter
             ) {
              // TODO FJ add filter
-            mio::Likelihood<decltype(model)> likelihood(model);
-            return 0;
-            // return likelihood.compute(observations);
+            mio::Likelihood<mio::oseir::Model> likelihood(model);
+            return likelihood.compute(observations);
          },
         "Computes likelihood for oseir model with the parameters that are currently set. Filter is used to map simulated compartments to observable compartments."
          ,py::arg("model")

@@ -34,7 +34,7 @@ TEST(TestCompartmentLikelihood, computeLikelihoodOseir)
     model.parameters.set<mio::oseir::TransmissionProbabilityOnContact>(0.25);
     model.parameters.get<mio::oseir::ContactPatterns>().get_baseline()(0, 0) = 1;
 
-    double total_population                                                                            = 8e8;
+    double total_population                                                                            = 8e8+1e5+1e5+1e3;
     model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Exposed)}]   = 1e5;
     model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Infected)}]  = 1e5;
     model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Recovered)}] = 1e3;
@@ -97,7 +97,7 @@ TEST(TestCompartmentLikelihood, benchmark)
     model.parameters.set<mio::oseir::TransmissionProbabilityOnContact>(0.25);
     model.parameters.get<mio::oseir::ContactPatterns>().get_baseline()(0, 0) = 1;
 
-    double total_population                                                                            = 8e8;
+    double total_population                                                                            = 8e8+1e5+1e5+1e3;
     model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Exposed)}]   = 1e5;
     model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Infected)}]  = 1e5;
     model.populations[{mio::Index<mio::oseir::InfectionState>(mio::oseir::InfectionState::Recovered)}] = 1e3;
@@ -150,6 +150,7 @@ TEST(TestCompartmentLikelihood, benchmark)
     volatile double writeMe = 0;
     for(int i=0; i<10; ++i) {
          writeMe = likelihood.compute(observations);
+        std::cout << "likelihood: " << writeMe << "\n";
     }
     auto t2 = std::chrono::high_resolution_clock::now();
 
@@ -159,7 +160,6 @@ TEST(TestCompartmentLikelihood, benchmark)
     /* Getting number of milliseconds as a double. */
     std::chrono::duration<double, std::milli> ms_double = t2 - t1;
 
-    std::cout << "likelihood: " << writeMe << "\n";
     std::cout << ms_int.count() << "ms\n";
     std::cout << ms_double.count() << "ms\n";
 }

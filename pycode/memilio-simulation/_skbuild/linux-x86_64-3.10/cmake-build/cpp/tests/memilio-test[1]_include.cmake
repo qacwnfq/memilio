@@ -1,0 +1,5 @@
+if(EXISTS "/home/jadebeck/repos/LOKI/memilio/pycode/memilio-simulation/_skbuild/linux-x86_64-3.10/cmake-build/cpp/tests/memilio-test[1]_tests.cmake")
+  include("/home/jadebeck/repos/LOKI/memilio/pycode/memilio-simulation/_skbuild/linux-x86_64-3.10/cmake-build/cpp/tests/memilio-test[1]_tests.cmake")
+else()
+  add_test(memilio-test_NOT_BUILT memilio-test_NOT_BUILT)
+endif()
