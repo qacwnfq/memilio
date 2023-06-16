@@ -64,7 +64,7 @@ public:
         Eigen::LLT<Eigen::MatrixXd> llt_solver(cov);
         if (llt_solver.info() == Eigen::Success) {
             Eigen::VectorXd inv_cov_dev = llt_solver.solve(dev);
-            double ldet                 = Eigen::MatrixXd(llt_solver.matrixL()).diagonal().array().log().sum();
+            double ldet                 = 2*Eigen::MatrixXd(llt_solver.matrixL()).diagonal().array().log().sum();
             return std::make_pair(inv_cov_dev, ldet);
         }
 
@@ -84,7 +84,7 @@ public:
         Eigen::MatrixXd evs         = solver.eigenvectors();
         Eigen::VectorXd inv_cov_dev = (evs * es.asDiagonal() * evs.transpose()) * dev;
 
-        return std::make_pair(inv_cov_dev, ldet/2);
+        return std::make_pair(inv_cov_dev, ldet);
     }
 
     auto compute(TimeSeries<double> observed, double dt = 1e-1, double eps = 1e-13)
@@ -117,8 +117,8 @@ public:
             double num_comparts   = m_model->populations.get_num_compartments();
             double num_age_groups = 1; // hard coded for now
             double dim            = num_comparts * num_age_groups;
-            logp -= static_cast<decltype(logp)>(dev.transpose() * inv_cov_dev) / 2 - ldet;
-            logp -= dim / 2 * std::log(2 * boost::math::constants::pi<double>());
+            logp += -static_cast<decltype(logp)>(dev.transpose() * inv_cov_dev) / 2 - ldet / 2;
+            logp += -dim / 2 * std::log(2 * boost::math::constants::pi<double>());
         }
         return -logp;
     }
