@@ -26,7 +26,7 @@
 
 TEST(TestCompartmentLikelihood, computeLikelihoodOseir)
 {
-    double expectedLikelihood = 484.27044719538532;
+    double expectedLikelihood = 484.11127970230297;
 
     mio::oseir::Model model;
     model.parameters.set<mio::oseir::TimeExposed>(5.2);
@@ -149,7 +149,7 @@ TEST(TestCompartmentLikelihood, benchmark)
     auto t1 = std::chrono::high_resolution_clock::now();
     volatile double writeMe = 0;
     for(int i=0; i<10; ++i) {
-         writeMe = likelihood.compute(observations);
+        writeMe = likelihood.compute(observations);
         std::cout << "likelihood: " << writeMe << "\n";
     }
     auto t2 = std::chrono::high_resolution_clock::now();

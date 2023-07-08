@@ -69,7 +69,10 @@ public:
         }
 
         // If llt does not work numerically, use pseudo-inverse
-        Eigen::SelfAdjointEigenSolver<Eigen::MatrixXd> solver(cov);
+        Eigen::SelfAdjointEigenSolver<Eigen::MatrixXd> solver(cov, Eigen::ComputeEigenvectors);
+        if(solver.info()!=Eigen::Success) {
+            throw std::runtime_error("Numerical failure when computing inverse covariance");
+        }
         Eigen::VectorXd es = solver.eigenvalues();
         double ldet        = 0;
         for (Eigen::Index j = 0; j < es.rows(); ++j) {
@@ -82,7 +85,7 @@ public:
             }
         }
         Eigen::MatrixXd evs         = solver.eigenvectors();
-        Eigen::VectorXd inv_cov_dev = (evs * es.asDiagonal() * evs.transpose()) * dev;
+        Eigen::VectorXd inv_cov_dev = evs * (es.asDiagonal() * (evs.transpose() * dev));
 
         return std::make_pair(inv_cov_dev, ldet);
     }
