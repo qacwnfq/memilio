@@ -116,9 +116,6 @@ public:
             Eigen::VectorXd inv_cov_dev = result_pair.first;
             double ldet = result_pair.second;
 
-            double num_comparts   = m_model->populations.get_num_compartments();
-            double num_age_groups = 1; // hard coded for now
-            double dim            = num_comparts * num_age_groups;
             logp += -static_cast<decltype(logp)>(dev.transpose() * inv_cov_dev) / 2 - ldet / 2;
         }
         return -logp;
