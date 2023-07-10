@@ -1,9 +1,0 @@
-libdir=/home/jadebeck/repos/LOKI/memilio/pycode/memilio-simulation/_skbuild/linux-x86_64-3.10/cmake-install/lib
-includedir=/home/jadebeck/repos/LOKI/memilio/pycode/memilio-simulation/_skbuild/linux-x86_64-3.10/cmake-install/include
-
-Name: gtest
-Description: GoogleTest (without main() function)
-Version: 1.12.1
-URL: https://github.com/google/googletest
-Libs: -L${libdir} -lgtest 
-Cflags: -I${includedir} -DGTEST_HAS_PTHREAD=1
