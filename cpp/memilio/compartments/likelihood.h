@@ -27,7 +27,6 @@
 #include <Eigen/Cholesky>
 
 #include <boost/numeric/odeint/stepper/runge_kutta_cash_karp54.hpp>
-#include <boost/math/constants/constants.hpp>
 
 namespace mio
 {
@@ -121,7 +120,6 @@ public:
             double num_age_groups = 1; // hard coded for now
             double dim            = num_comparts * num_age_groups;
             logp += -static_cast<decltype(logp)>(dev.transpose() * inv_cov_dev) / 2 - ldet / 2;
-            logp += -dim / 2 * std::log(2 * boost::math::constants::pi<double>());
         }
         return -logp;
     }
