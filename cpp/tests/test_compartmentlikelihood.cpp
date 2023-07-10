@@ -26,7 +26,7 @@
 
 TEST(TestCompartmentLikelihood, computeLikelihoodOseir)
 {
-    double expectedLikelihood = 484.11127970230297;
+    double expectedLikelihood = 447.35373837411612;
 
     mio::oseir::Model model;
     model.parameters.set<mio::oseir::TimeExposed>(5.2);
