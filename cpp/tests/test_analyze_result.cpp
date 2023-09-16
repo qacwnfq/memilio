@@ -19,7 +19,7 @@
 */
 #include "memilio/compartments/simulation.h"
 #include "memilio/mobility/graph.h"
-#include "memilio/mobility/meta_mobility_instant.h"
+#include "memilio/mobility/metapopulation_mobility_instant.h"
 #include "ode_secir/analyze_result.h"
 #include "matchers.h"
 #include "gtest/gtest.h"
