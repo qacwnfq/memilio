@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['time_2638',['time',['../structmio_1_1abm_1_1Trip.html#a57c712334dcc9ca9d3945196f1332c63',1,'mio::abm::Trip']]],
-  ['type_2639',['type',['../structmio_1_1abm_1_1LocationId.html#a87dd2f952b166a8690dabd3e3835d965',1,'mio::abm::LocationId']]]
+  ['obj_3088',['obj',['../structmio_1_1details_1_1SerializationVisitor.html#a5f7ca6cea890e13a6fbabab634dc33a7',1,'mio::details::SerializationVisitor']]]
 ];

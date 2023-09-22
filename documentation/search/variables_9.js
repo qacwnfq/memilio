@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['obj_2623',['obj',['../structmio_1_1details_1_1SerializationVisitor.html#a5f7ca6cea890e13a6fbabab634dc33a7',1,'mio::details::SerializationVisitor']]]
+  ['logged_2902',['logged',['../classmio_1_1History.html#aa5f1809efc17523536f4b161d3619ae0',1,'mio::History']]]
 ];

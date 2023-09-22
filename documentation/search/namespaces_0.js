@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['de_1637',['de',['../namespaceholidays_1_1de.html',1,'holidays']]],
-  ['holidays_1638',['holidays',['../namespaceholidays.html',1,'']]]
+  ['de_1917',['de',['../namespaceholidays_1_1de.html',1,'holidays']]],
+  ['holidays_1918',['holidays',['../namespaceholidays.html',1,'']]]
 ];

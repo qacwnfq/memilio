@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['totalinfections_2844',['TotalInfections',['../namespacemio_1_1osecirvvs.html#a429bf3ed03ff6928629f5d786b547023a7665c9bf381c48eb6feac25df813a00f',1,'mio::osecirvvs']]],
-  ['trace_2845',['trace',['../namespacemio.html#a67881790c6dfd8c058d27e5f1fe24220a04a75036e9d520bb983c5ed03b8d0182',1,'mio']]],
-  ['transportwithoutcontact_2846',['TransportWithoutContact',['../namespacemio_1_1abm.html#a83bc98ab43329c10fe9a6e683f2e1d0fab780feddf2b83d77ae9ab2173b8fe0b2',1,'mio::abm']]]
+  ['r_3326',['R',['../namespacemio_1_1iseir.html#ab27b12ec16e03c1857925e3c24ff99e8ae1e1d3d40573127e9ee0480caf1283d6',1,'mio::iseir']]],
+  ['recovered_3327',['Recovered',['../namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704a5c4c4cf7bbab0d76fe61420aee14a5ca',1,'mio::abm::Recovered()'],['../namespacemio_1_1isecir.html#a4765e077a33191fc1125ca33a6ad8697a5c4c4cf7bbab0d76fe61420aee14a5ca',1,'mio::isecir::Recovered()'],['../namespacemio_1_1osecir.html#a3324235e2fb18f1c89744f6d5c30864ba5c4c4cf7bbab0d76fe61420aee14a5ca',1,'mio::osecir::Recovered()'],['../namespacemio_1_1oseir.html#a32ea4a2481cf5935d5124ffb43636e44a5c4c4cf7bbab0d76fe61420aee14a5ca',1,'mio::oseir::Recovered()']]]
 ];

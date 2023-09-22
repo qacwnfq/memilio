@@ -37,12 +37,12 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-04-17 14:38:18</td>
+            <td class="headerValue">2023-09-22 11:24:10</td>
             <td></td>
             <td class="headerItem">Functions:</td>
-            <td class="headerCovTableEntry">12</td>
-            <td class="headerCovTableEntry">14</td>
-            <td class="headerCovTableEntryMed">85.7 %</td>
+            <td class="headerCovTableEntry">15</td>
+            <td class="headerCovTableEntry">19</td>
+            <td class="headerCovTableEntryMed">78.9 %</td>
           </tr>
           <tr><td><img src="../../glass.png" width=3 height=3 alt=""></td></tr>
         </table>
@@ -68,52 +68,72 @@
               <td class="coverFnLo">0</td>
             </tr>
     <tr>
+              <td class="coverFn"><a href="uncertain_value.h.gcov.html#182">auto mio::UncertainValue::deserialize&lt;mio::BinarySerializerContext&gt;(mio::BinarySerializerContext&amp;)::{lambda(auto:1&amp;&amp;)#2}::operator()&lt;double const&amp;&gt;(mio::BinarySerializerContext&amp;&amp;) const</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="uncertain_value.h.gcov.html#191">auto mio::UncertainValue::deserialize&lt;mio::BinarySerializerContext&gt;(mio::BinarySerializerContext&amp;)::{lambda(auto:1&amp;&amp;)#3}::operator()&lt;boost::optional&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt; &gt; const&amp;&gt;(mio::BinarySerializerContext&amp;&amp;) const</a></td>
+              <td class="coverFnLo">0</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="uncertain_value.h.gcov.html#161">boost::outcome_v2::basic_result&lt;mio::UncertainValue, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::UncertainValue::deserialize&lt;mio::BinarySerializerContext&gt;(mio::BinarySerializerContext&amp;)</a></td>
+              <td class="coverFnHi">120</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="uncertain_value.h.gcov.html#145">void mio::UncertainValue::serialize&lt;mio::BinarySerializerContext&gt;(mio::BinarySerializerContext&amp;) const</a></td>
+              <td class="coverFnHi">120</td>
+            </tr>
+    <tr>
+              <td class="coverFn"><a href="uncertain_value.h.gcov.html#169">auto mio::UncertainValue::deserialize&lt;mio::BinarySerializerContext&gt;(mio::BinarySerializerContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;)#1}::operator()&lt;double const&amp;, boost::optional&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt; &gt; const&amp;&gt;(mio::BinarySerializerContext&amp;&amp;, boost::optional&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt; &gt; const&amp;) const</a></td>
+              <td class="coverFnHi">120</td>
+            </tr>
+    <tr>
               <td class="coverFn"><a href="uncertain_value.h.gcov.html#182">auto mio::UncertainValue::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;)#2}::operator()&lt;double const&amp;&gt;(mio::JsonContext&amp;&amp;) const</a></td>
-              <td class="coverFnHi">264</td>
+              <td class="coverFnHi">288</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="uncertain_value.h.gcov.html#169">auto mio::UncertainValue::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)::{lambda(auto:1&amp;&amp;, auto:2&amp;&amp;)#1}::operator()&lt;double const&amp;, boost::optional&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt; &gt; const&amp;&gt;(mio::JsonContext&amp;&amp;, boost::optional&lt;std::shared_ptr&lt;mio::ParameterDistribution&gt; &gt; const&amp;) const</a></td>
-              <td class="coverFnHi">297</td>
+              <td class="coverFnHi">313</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="uncertain_value.h.gcov.html#161">boost::outcome_v2::basic_result&lt;mio::UncertainValue, mio::IOStatus, boost::outcome_v2::policy::all_narrow&gt; mio::UncertainValue::deserialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;)</a></td>
-              <td class="coverFnHi">561</td>
+              <td class="coverFnHi">601</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="uncertain_value.h.gcov.html#145">void mio::UncertainValue::serialize&lt;mio::JsonContext&gt;(mio::JsonContext&amp;) const</a></td>
-              <td class="coverFnHi">1503</td>
+              <td class="coverFnHi">1611</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="uncertain_value.h.gcov.html#84">mio::UncertainValue::value() const</a></td>
-              <td class="coverFnHi">1541</td>
+              <td class="coverFnHi">1767</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="uncertain_value.h.gcov.html#55">mio::UncertainValue::UncertainValue(mio::UncertainValue&amp;&amp;)</a></td>
-              <td class="coverFnHi">2042</td>
+              <td class="coverFnHi">2547</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="uncertain_value.h.gcov.html#104">mio::UncertainValue::operator=(double)</a></td>
-              <td class="coverFnHi">4866</td>
+              <td class="coverFnHi">5104</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="uncertain_value.h.gcov.html#92">mio::UncertainValue::operator double&amp;()</a></td>
-              <td class="coverFnHi">15291</td>
+              <td class="coverFnHi">19961</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="uncertain_value.h.gcov.html#50">mio::UncertainValue::UncertainValue(double)</a></td>
-              <td class="coverFnHi">58637</td>
+              <td class="coverFnHi">49296</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="uncertain_value.h.gcov.html#73">mio::UncertainValue::operator=(mio::UncertainValue const&amp;)</a></td>
-              <td class="coverFnHi">59038</td>
+              <td class="coverFnHi">49755</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="uncertain_value.h.gcov.html#61">mio::UncertainValue::UncertainValue(mio::UncertainValue const&amp;)</a></td>
-              <td class="coverFnHi">93815</td>
+              <td class="coverFnHi">72848</td>
             </tr>
     <tr>
               <td class="coverFn"><a href="uncertain_value.h.gcov.html#96">mio::UncertainValue::operator double const&amp;() const</a></td>
-              <td class="coverFnHi">598787</td>
+              <td class="coverFnHi">99731516</td>
             </tr>
   </table>
   <br>
