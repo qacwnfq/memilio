@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Date:</td>
-            <td class="headerValue">2023-10-04 11:10:21</td>
+            <td class="headerValue">2024-03-30 19:11:46</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntry">4</td>
@@ -61,7 +61,7 @@
 <pre class="sourceHeading">          Line data    Source code</pre>
 <pre class="source">
 <a name="1"><span class="lineNum">       1 </span>            : /* </a>
-<a name="2"><span class="lineNum">       2 </span>            : * Copyright (C) 2020-2023 German Aerospace Center (DLR-SC)</a>
+<a name="2"><span class="lineNum">       2 </span>            : * Copyright (C) 2020-2024 MEmilio</a>
 <a name="3"><span class="lineNum">       3 </span>            : *</a>
 <a name="4"><span class="lineNum">       4 </span>            : * Authors: Wadim Koslow, Daniel Abele, Martin J. Kuehn</a>
 <a name="5"><span class="lineNum">       5 </span>            : *</a>
@@ -255,8 +255,8 @@
 <a name="193"><span class="lineNum">     193 </span>            :                 StatusCode::UnknownError, &quot;Values data could not be read&quot;);</a>
 <a name="194"><span class="lineNum">     194 </span>            : </a>
 <a name="195"><span class="lineNum">     195 </span><span class="lineCov">        478 :             for (Eigen::Index idx_t = 0; idx_t &lt; num_timepoints; idx_t++) {</span></a>
-<a name="196"><span class="lineNum">     196 </span><span class="lineCov">       6634 :                 for (Eigen::Index idx_c = 0; idx_c &lt; num_infectionstates; idx_c++) {</span></a>
-<a name="197"><span class="lineNum">     197 </span><span class="lineCov">       6242 :                     groups[idx_t][num_infectionstates * group_idx + idx_c] = group_values(idx_t, idx_c);</span></a>
+<a name="196"><span class="lineNum">     196 </span><span class="lineCov">       6505 :                 for (Eigen::Index idx_c = 0; idx_c &lt; num_infectionstates; idx_c++) {</span></a>
+<a name="197"><span class="lineNum">     197 </span><span class="lineCov">       6113 :                     groups[idx_t][num_infectionstates * group_idx + idx_c] = group_values(idx_t, idx_c);</span></a>
 <a name="198"><span class="lineNum">     198 </span>            :                 }</a>
 <a name="199"><span class="lineNum">     199 </span>            :             }</a>
 <a name="200"><span class="lineNum">     200 </span>            :         }</a>

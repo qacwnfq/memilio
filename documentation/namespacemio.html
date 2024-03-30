@@ -67,7 +67,8 @@ $(function() {
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">mio Namespace Reference</div>  </div>
 </div><!--header-->
@@ -88,6 +89,8 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacemio_1_1iseir"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1iseir.html">iseir</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacemio_1_1lsecir"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1lsecir.html">lsecir</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacemio_1_1mpi"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1mpi.html">mpi</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacemio_1_1osecir"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osecir.html">osecir</a></td></tr>
@@ -96,8 +99,14 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacemio_1_1oseir"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1oseir.html">oseir</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacemio_1_1osir"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1osir.html">osir</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacemio_1_1regions"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1regions.html">regions</a></td></tr>
 <tr class="memdesc:namespacemio_1_1regions"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains utilities that depend on geographical regions. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacemio_1_1ssir"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1ssir.html">ssir</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacemio_1_1ssirs"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio_1_1ssirs.html">ssirs</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -169,6 +178,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">randomly sample dampings for e.g.  <a href="classmio_1_1DampingSampling.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1DataWriterToMemory.html">DataWriterToMemory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class writes data retrieved from loggers to memory.  <a href="structmio_1_1DataWriterToMemory.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1Date.html">Date</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple date representation as year, month, and day.  <a href="structmio_1_1Date.html#details">More...</a><br /></td></tr>
@@ -194,6 +204,14 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1ExponentialDecay.html">ExponentialDecay</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that defines an exponential decay function depending on the state age.  <a href="structmio_1_1ExponentialDecay.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1Flow.html">Flow</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="structmio_1_1Flow.html" title="A Flow defines a possible transition between two Compartments in a FlowModel.">Flow</a> defines a possible transition between two Compartments in a <a class="el" href="classmio_1_1FlowModel.html" title="A FlowModel is a CompartmentalModel defined by the flows between compartments.">FlowModel</a>.  <a href="structmio_1_1Flow.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1FlowModel.html">FlowModel</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classmio_1_1FlowModel.html" title="A FlowModel is a CompartmentalModel defined by the flows between compartments.">FlowModel</a> is a <a class="el" href="structmio_1_1CompartmentalModel.html" title="CompartmentalModel is a template for a compartmental model for an array of initial populations and a ...">CompartmentalModel</a> defined by the flows between compartments.  <a href="classmio_1_1FlowModel.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1FlowSimulation.html">FlowSimulation</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Graph.html">Graph</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">generic graph structure  <a href="classmio_1_1Graph.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -204,13 +222,28 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1GraphSimulationStochastic.html">GraphSimulationStochastic</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1has__duplicates.html">has_duplicates</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether the list Types contains any type multiple times.  <a href="structmio_1_1has__duplicates.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1History.html">History</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classmio_1_1History.html" title="History class that handles writers and loggers.">History</a> class that handles writers and loggers.  <a href="classmio_1_1History.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Index.html">Index</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An <a class="el" href="classmio_1_1Index.html" title="An Index with more than one template parameter combines several Index objects.">Index</a> with more than one template parameter combines several <a class="el" href="classmio_1_1Index.html" title="An Index with more than one template parameter combines several Index objects.">Index</a> objects.  <a href="classmio_1_1Index.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1Index_3_01CategoryTag_01_4.html">Index&lt; CategoryTag &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An <a class="el" href="classmio_1_1Index.html" title="An Index with more than one template parameter combines several Index objects.">Index</a> with a single template parameter is a typesafe wrapper for size_t that is associated with a Tag.  <a href="classmio_1_1Index_3_01CategoryTag_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1index__of__type.html">index_of_type</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the index of a Type in the list Types.  <a href="structmio_1_1index__of__type.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1index__of__type_3_01CategoryTag_00_01_1_1mio_1_1Index_3_01CategoryTags_8_8_8_01_4_01_4.html">index_of_type&lt; CategoryTag, ::mio::Index&lt; CategoryTags... &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1index__of__type_3_01Type_00_01TypeList_3_01Types_8_8_8_01_4_01_4.html">index_of_type&lt; Type, TypeList&lt; Types... &gt; &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="structmio_1_1index__of__type.html" title="Finds the index of a Type in the list Types.">index_of_type</a> for <a class="el" href="structmio_1_1TypeList.html" title="Collection of types. Each type is mapped to an index of type size_t.">TypeList</a>.  <a href="structmio_1_1index__of__type_3_01Type_00_01TypeList_3_01Types_8_8_8_01_4_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1IndexRange.html">IndexRange</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <a class="el" href="classmio_1_1Range.html" title="immutable random access range, e.g.">Range</a> that can be used to iterate over a MultiIndex.  <a href="classmio_1_1IndexRange.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1InEdgeBase.html">InEdgeBase</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -228,9 +261,16 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1is__expression__valid.html">is_expression_valid</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines static constant value = true if Expr&lt;T...&gt; produces a valid type.  <a href="structmio_1_1is__expression__valid.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1is__type__in__list.html">is_type_in_list</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tests whether Type is in the list Types.  <a href="structmio_1_1is__type__in__list.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1LctInfectionState.html">LctInfectionState</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the functionality to be able to work with subcompartments in an LCT model.  <a href="classmio_1_1LctInfectionState.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1LogAlways.html">LogAlways</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1LogOnce.html">LogOnce</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="structmio_1_1LogOnce.html" title="LogOnce and LogAlways can be used as a base class to write a logger for History.">LogOnce</a> and <a class="el" href="structmio_1_1LogAlways.html">LogAlways</a> can be used as a base class to write a logger for <a class="el" href="classmio_1_1History.html" title="History class that handles writers and loggers.">History</a>.  <a href="structmio_1_1LogOnce.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1MigrationEdge.html">MigrationEdge</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">represents the migration between two nodes.  <a href="classmio_1_1MigrationEdge.html#details">More...</a><br /></td></tr>
@@ -356,6 +396,17 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1TransformIterator.html">TransformIterator</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator that transforms the values produced by an underlying iterator.  <a href="classmio_1_1TransformIterator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1type__at__index.html">type_at_index</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the type at the Index-th position in the list Types.  <a href="structmio_1_1type__at__index.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1type__at__index_3_01Index_00_01_1_1mio_1_1Index_3_01CategoryTags_8_8_8_01_4_01_4.html">type_at_index&lt; Index, ::mio::Index&lt; CategoryTags... &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1type__at__index_3_01Index_00_01TypeList_3_01Types_8_8_8_01_4_01_4.html">type_at_index&lt; Index, TypeList&lt; Types... &gt; &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialization of <a class="el" href="structmio_1_1type__at__index.html" title="Finds the type at the Index-th position in the list Types.">type_at_index</a> for <a class="el" href="structmio_1_1TypeList.html" title="Collection of types. Each type is mapped to an index of type size_t.">TypeList</a>.  <a href="structmio_1_1type__at__index_3_01Index_00_01TypeList_3_01Types_8_8_8_01_4_01_4.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmio_1_1TypeList.html">TypeList</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of types. Each type is mapped to an index of type size_t.  <a href="structmio_1_1TypeList.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmio_1_1TypeSafe.html">TypeSafe</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">typesafe wrapper around any type to make function arguments, tuple elements, etc.  <a href="classmio_1_1TypeSafe.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -386,6 +437,8 @@ Typedefs</h2></td></tr>
 <tr class="memitem:af6d8d488db7199d4e87910999c8b30ec"><td class="memTemplParams" colspan="2">template&lt;class M &gt; </td></tr>
 <tr class="memitem:af6d8d488db7199d4e87910999c8b30ec"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#af6d8d488db7199d4e87910999c8b30ec">CVPlainMatrixT</a> = typename <a class="el" href="structmio_1_1CVPlainMatrix.html">CVPlainMatrix</a>&lt; M &gt;::Type</td></tr>
 <tr class="separator:af6d8d488db7199d4e87910999c8b30ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76032c2b247049f61bd927aeb89472eb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a76032c2b247049f61bd927aeb89472eb">DefaultIntegratorCore</a> = <a class="el" href="classmio_1_1ControlledStepperWrapper.html">mio::ControlledStepperWrapper</a>&lt; boost::numeric::odeint::runge_kutta_cash_karp54 &gt;</td></tr>
+<tr class="separator:a76032c2b247049f61bd927aeb89472eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6164d4e8f4df5089a14e927650c5a638"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a6164d4e8f4df5089a14e927650c5a638">DerivFunction</a> = std::function&lt; void(Eigen::Ref&lt; const Eigen::VectorXd &gt; y, double t, Eigen::Ref&lt; Eigen::VectorXd &gt; dydt)&gt;</td></tr>
 <tr class="memdesc:a6164d4e8f4df5089a14e927650c5a638"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function template to be integrated.  <a href="namespacemio.html#a6164d4e8f4df5089a14e927650c5a638">More...</a><br /></td></tr>
 <tr class="separator:a6164d4e8f4df5089a14e927650c5a638"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -459,6 +512,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a0752d0ad90c7c7789098b08021da4418"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a0752d0ad90c7c7789098b08021da4418">is_container</a> = <a class="el" href="structmio_1_1is__expression__valid.html">is_expression_valid</a>&lt; <a class="el" href="namespacemio_1_1details.html#aa2c4bf335b2dc1bff2495bf91e60e182">details::compare_iterators_t</a>, C &gt;</td></tr>
 <tr class="memdesc:a0752d0ad90c7c7789098b08021da4418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is std::true_type if C is a STL compatible container.  <a href="namespacemio.html#a0752d0ad90c7c7789098b08021da4418">More...</a><br /></td></tr>
 <tr class="separator:a0752d0ad90c7c7789098b08021da4418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cce713b5cc60fdefa96b63c78cc9b47"><td class="memTemplParams" colspan="2">template&lt;class Model &gt; </td></tr>
+<tr class="memitem:a1cce713b5cc60fdefa96b63c78cc9b47"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a1cce713b5cc60fdefa96b63c78cc9b47">is_flow_model</a> = std::integral_constant&lt; bool,(<a class="el" href="structmio_1_1is__expression__valid.html">is_expression_valid</a>&lt; <a class="el" href="namespacemio.html#af36c2127af23cdd9c3b02dd800c2915e">get_derivatives_expr_t</a>, Model &gt;::value &amp;&amp;<a class="el" href="structmio_1_1is__expression__valid.html">is_expression_valid</a>&lt; <a class="el" href="namespacemio.html#aa5d1e4e3820a17d013b5a7e91d73a96d">get_flows_expr_t</a>, Model &gt;::value &amp;&amp;<a class="el" href="structmio_1_1is__expression__valid.html">is_expression_valid</a>&lt; <a class="el" href="namespacemio.html#a951c87b8f22bce14892fefe0f464b41b">get_initial_flows_expr_t</a>, Model &gt;::value &amp;&amp;<a class="el" href="namespacemio.html#affa0f99f4573e98460b38e88d9c107ba">is_compartment_model</a>&lt; Model &gt;::value)&gt;</td></tr>
+<tr class="memdesc:a1cce713b5cc60fdefa96b63c78cc9b47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template meta function to check if a type is a valid flow model.  <a href="namespacemio.html#a1cce713b5cc60fdefa96b63c78cc9b47">More...</a><br /></td></tr>
+<tr class="separator:a1cce713b5cc60fdefa96b63c78cc9b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a13de5a1cf9acb4db85042f9bc948ea"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a6a13de5a1cf9acb4db85042f9bc948ea"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a6a13de5a1cf9acb4db85042f9bc948ea">is_iterator</a> = <a class="el" href="structmio_1_1is__expression__valid.html">is_expression_valid</a>&lt; <a class="el" href="namespacemio.html#a2f0a87714e50d80a23c07a795e1ac104">is_iterator_expr_t</a>, T &gt;</td></tr>
 <tr class="separator:a6a13de5a1cf9acb4db85042f9bc948ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -517,6 +574,10 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a9114c7ed6467f9e2babbe5c9a2c03747"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a9114c7ed6467f9e2babbe5c9a2c03747">test_commuters_expr_t</a> = decltype(<a class="el" href="namespacemio.html#adb526164db4b433fe9e65133f20edd3d">test_commuters</a>(std::declval&lt; Sim &amp; &gt;(), std::declval&lt; Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp; &gt;(), std::declval&lt; double &gt;()))</td></tr>
 <tr class="memdesc:a9114c7ed6467f9e2babbe5c9a2c03747"><td class="mdescLeft">&#160;</td><td class="mdescRight">detect a get_migration_factors function for the Model type.  <a href="namespacemio.html#a9114c7ed6467f9e2babbe5c9a2c03747">More...</a><br /></td></tr>
 <tr class="separator:a9114c7ed6467f9e2babbe5c9a2c03747"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49caa280ba5357645388c8cb56d4da17"><td class="memTemplParams" colspan="2">template&lt;std::size_t Index, class... Types&gt; </td></tr>
+<tr class="memitem:a49caa280ba5357645388c8cb56d4da17"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a49caa280ba5357645388c8cb56d4da17">type_at_index_t</a> = typename <a class="el" href="structmio_1_1type__at__index.html">type_at_index</a>&lt; <a class="el" href="classmio_1_1Index.html">Index</a>, Types... &gt;::type</td></tr>
+<tr class="memdesc:a49caa280ba5357645388c8cb56d4da17"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type at the Index-th position in the list Types.  <a href="namespacemio.html#a49caa280ba5357645388c8cb56d4da17">More...</a><br /></td></tr>
+<tr class="separator:a49caa280ba5357645388c8cb56d4da17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a852855378d297141c058aa4d561b90e9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a852855378d297141c058aa4d561b90e9">VectorDamping</a> = <a class="el" href="classmio_1_1Damping.html">Damping</a>&lt; <a class="el" href="classmio_1_1ColumnVectorShape.html">ColumnVectorShape</a> &gt;</td></tr>
 <tr class="separator:a852855378d297141c058aa4d561b90e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70fa1b55f14e56241f910c68e9ff75bc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a70fa1b55f14e56241f910c68e9ff75bc">VectorDampings</a> = <a class="el" href="classmio_1_1Dampings.html">Dampings</a>&lt; <a class="el" href="namespacemio.html#a852855378d297141c058aa4d561b90e9">VectorDamping</a> &gt;</td></tr>
@@ -528,6 +589,17 @@ Typedefs</h2></td></tr>
 <tr class="memitem:af11f796ce6022b2a47e39adc29c89fcb"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#af11f796ce6022b2a47e39adc29c89fcb">void_t</a> = typename <a class="el" href="structmio_1_1details_1_1make__void.html">details::make_void</a>&lt; Ts... &gt;::type</td></tr>
 <tr class="memdesc:af11f796ce6022b2a47e39adc29c89fcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">utility for meta programming that produces void for any valid type.  <a href="namespacemio.html#af11f796ce6022b2a47e39adc29c89fcb">More...</a><br /></td></tr>
 <tr class="separator:af11f796ce6022b2a47e39adc29c89fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader"></div></td></tr>
+<tr class="memitem:af36c2127af23cdd9c3b02dd800c2915e"><td class="memTemplParams" colspan="2">template&lt;class M &gt; </td></tr>
+<tr class="memitem:af36c2127af23cdd9c3b02dd800c2915e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#af36c2127af23cdd9c3b02dd800c2915e">get_derivatives_expr_t</a> = decltype(std::declval&lt; const M &amp; &gt;().get_derivatives(std::declval&lt; Eigen::Ref&lt; const Eigen::VectorXd &gt; &gt;(), std::declval&lt; Eigen::Ref&lt; Eigen::VectorXd &gt; &gt;()))</td></tr>
+<tr class="memdesc:af36c2127af23cdd9c3b02dd800c2915e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detect whether certain member functions (the name before '_expr_t') exist.  <a href="namespacemio.html#af36c2127af23cdd9c3b02dd800c2915e">More...</a><br /></td></tr>
+<tr class="separator:af36c2127af23cdd9c3b02dd800c2915e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5d1e4e3820a17d013b5a7e91d73a96d"><td class="memTemplParams" colspan="2">template&lt;class M &gt; </td></tr>
+<tr class="memitem:aa5d1e4e3820a17d013b5a7e91d73a96d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#aa5d1e4e3820a17d013b5a7e91d73a96d">get_flows_expr_t</a> = decltype(std::declval&lt; const M &amp; &gt;().get_flows(std::declval&lt; Eigen::Ref&lt; const Eigen::VectorXd &gt; &gt;(), std::declval&lt; Eigen::Ref&lt; const Eigen::VectorXd &gt; &gt;(), std::declval&lt; double &gt;(), std::declval&lt; Eigen::Ref&lt; Eigen::VectorXd &gt; &gt;()))</td></tr>
+<tr class="separator:aa5d1e4e3820a17d013b5a7e91d73a96d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a951c87b8f22bce14892fefe0f464b41b"><td class="memTemplParams" colspan="2">template&lt;class M &gt; </td></tr>
+<tr class="memitem:a951c87b8f22bce14892fefe0f464b41b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a951c87b8f22bce14892fefe0f464b41b">get_initial_flows_expr_t</a> = decltype(std::declval&lt; Eigen::VectorXd &gt;()=std::declval&lt; const M &amp; &gt;().get_initial_flows())</td></tr>
+<tr class="separator:a951c87b8f22bce14892fefe0f464b41b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -599,6 +671,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ac756601e49cde978ae849e736f7ffd5e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#ac756601e49cde978ae849e736f7ffd5e">calculate_migration_returns</a> (Eigen::Ref&lt; <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt;::Vector &gt; migrated, const Sim &amp;sim, Eigen::Ref&lt; const <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt;::Vector &gt; total, double t, double dt)</td></tr>
 <tr class="memdesc:ac756601e49cde978ae849e736f7ffd5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">adjust number of migrated people when they return according to the model.  <a href="namespacemio.html#ac756601e49cde978ae849e736f7ffd5e">More...</a><br /></td></tr>
 <tr class="separator:ac756601e49cde978ae849e736f7ffd5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab02eb7f4efb5cb5a374a7ad79497784"><td class="memItemLeft" align="right" valign="top">std::array&lt; int, 12 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#aab02eb7f4efb5cb5a374a7ad79497784">calculate_partial_sum_of_months</a> (const <a class="el" href="structmio_1_1Date.html">Date</a> &amp;date)</td></tr>
+<tr class="memdesc:aab02eb7f4efb5cb5a374a7ad79497784"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cumulative number of days at the end of each month for a given year.  <a href="namespacemio.html#aab02eb7f4efb5cb5a374a7ad79497784">More...</a><br /></td></tr>
+<tr class="separator:aab02eb7f4efb5cb5a374a7ad79497784"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a682d1d1100a18177c401a32cbcdb80"><td class="memTemplParams" colspan="2">template&lt;class M &gt; </td></tr>
 <tr class="memitem:a1a682d1d1100a18177c401a32cbcdb80"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; std::is_base_of&lt; Eigen::EigenBase&lt; M &gt;, M &gt;::value, <a class="el" href="classmio_1_1RowMajorIterator.html">RowMajorIterator</a>&lt; M, true &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a1a682d1d1100a18177c401a32cbcdb80">cbegin</a> (const M &amp;m)</td></tr>
 <tr class="memdesc:a1a682d1d1100a18177c401a32cbcdb80"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a const iterator to first element of the matrix m.  <a href="namespacemio.html#a1a682d1d1100a18177c401a32cbcdb80">More...</a><br /></td></tr>
@@ -680,10 +755,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a66e6c3ccb05b51b0a86cec52f57d49a1"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a66e6c3ccb05b51b0a86cec52f57d49a1">ensemble_percentile</a> (const std::vector&lt; std::vector&lt; <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt;&gt;&gt; &amp;ensemble_result, double p)</td></tr>
 <tr class="memdesc:a66e6c3ccb05b51b0a86cec52f57d49a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">computes the p percentile of the result for each compartment, node, and time point.  <a href="namespacemio.html#a66e6c3ccb05b51b0a86cec52f57d49a1">More...</a><br /></td></tr>
 <tr class="separator:a66e6c3ccb05b51b0a86cec52f57d49a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9be9ff17fb76c68d0a1e6c2463164dcd"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a9be9ff17fb76c68d0a1e6c2463164dcd"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::array&lt; T, size_t(T::Count)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a9be9ff17fb76c68d0a1e6c2463164dcd">enum_members</a> ()</td></tr>
+<tr class="memdesc:a9be9ff17fb76c68d0a1e6c2463164dcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an std::array that contains all members of an enum class.  <a href="namespacemio.html#a9be9ff17fb76c68d0a1e6c2463164dcd">More...</a><br /></td></tr>
+<tr class="separator:a9be9ff17fb76c68d0a1e6c2463164dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebf8e2a8ccea82f3bbd91c3d479d1094"><td class="memTemplParams" colspan="2">template&lt;class Sim &gt; </td></tr>
 <tr class="memitem:aebf8e2a8ccea82f3bbd91c3d479d1094"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#aebf8e2a8ccea82f3bbd91c3d479d1094">evolve_model</a> (double t, double dt, <a class="el" href="classmio_1_1SimulationNode.html">SimulationNode</a>&lt; Sim &gt; &amp;node)</td></tr>
 <tr class="memdesc:aebf8e2a8ccea82f3bbd91c3d479d1094"><td class="mdescLeft">&#160;</td><td class="mdescRight">edge functor for migration simulation.  <a href="namespacemio.html#aebf8e2a8ccea82f3bbd91c3d479d1094">More...</a><br /></td></tr>
 <tr class="separator:aebf8e2a8ccea82f3bbd91c3d479d1094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5b7d8afd9adadd58170682f0d6e4240"><td class="memTemplParams" colspan="2">template&lt;class SuperIndex , class SubIndex &gt; </td></tr>
+<tr class="memitem:ad5b7d8afd9adadd58170682f0d6e4240"><td class="memTemplItemLeft" align="right" valign="top">SuperIndex&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#ad5b7d8afd9adadd58170682f0d6e4240">extend_index</a> (const SubIndex &amp;index, size_t fill_value=0)</td></tr>
+<tr class="memdesc:ad5b7d8afd9adadd58170682f0d6e4240"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a SuperIndex by copying values from SubIndex, filling new categories with fill_value.  <a href="namespacemio.html#ad5b7d8afd9adadd58170682f0d6e4240">More...</a><br /></td></tr>
+<tr class="separator:ad5b7d8afd9adadd58170682f0d6e4240"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23604adfeac7ebc8418d741959e80906"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a23604adfeac7ebc8418d741959e80906">failure</a> (const <a class="el" href="classmio_1_1IOStatus.html">IOStatus</a> &amp;s)</td></tr>
 <tr class="memdesc:a23604adfeac7ebc8418d741959e80906"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an object that is implicitly convertible to an error IOResult&lt;T&gt;.  <a href="namespacemio.html#a23604adfeac7ebc8418d741959e80906">More...</a><br /></td></tr>
 <tr class="separator:a23604adfeac7ebc8418d741959e80906"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -766,6 +849,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ab74f1d86f5a3421e7a971c22b50fd89c"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#ab74f1d86f5a3421e7a971c22b50fd89c">get_migration_factors</a> (const <a class="el" href="classmio_1_1SimulationNode.html">SimulationNode</a>&lt; Sim &gt; &amp;, double, const Eigen::Ref&lt; const Eigen::VectorXd &gt; &amp;y)</td></tr>
 <tr class="memdesc:ab74f1d86f5a3421e7a971c22b50fd89c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an additional migration factor.  <a href="namespacemio.html#ab74f1d86f5a3421e7a971c22b50fd89c">More...</a><br /></td></tr>
 <tr class="separator:ab74f1d86f5a3421e7a971c22b50fd89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a3d6ccfd62c6d5d6da08e3205663124"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a1a3d6ccfd62c6d5d6da08e3205663124">get_month_length</a> (<a class="el" href="structmio_1_1Date.html">Date</a> date)</td></tr>
+<tr class="memdesc:a1a3d6ccfd62c6d5d6da08e3205663124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the length of a month for a given date.  <a href="namespacemio.html#a1a3d6ccfd62c6d5d6da08e3205663124">More...</a><br /></td></tr>
+<tr class="separator:a1a3d6ccfd62c6d5d6da08e3205663124"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a836ec51b48f63ad6dca0724e9f5b28d8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a836ec51b48f63ad6dca0724e9f5b28d8">get_offset_in_days</a> (<a class="el" href="structmio_1_1Date.html">Date</a> date1, <a class="el" href="structmio_1_1Date.html">Date</a> date2)</td></tr>
 <tr class="memdesc:a836ec51b48f63ad6dca0724e9f5b28d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the offset in days given two dates: first date minus second date.  <a href="namespacemio.html#a836ec51b48f63ad6dca0724e9f5b28d8">More...</a><br /></td></tr>
 <tr class="separator:a836ec51b48f63ad6dca0724e9f5b28d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -794,6 +880,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a7dcfb78101db4f3634bad069f1e2271f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a7dcfb78101db4f3634bad069f1e2271f">interpolate_simulation_result</a> (const <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; double &gt; &amp;simulation_result, const std::vector&lt; double &gt; &amp;interpolation_times)</td></tr>
 <tr class="memdesc:a7dcfb78101db4f3634bad069f1e2271f"><td class="mdescLeft">&#160;</td><td class="mdescRight">interpolate time series with freely chosen time points that lie in between the time points of the given time series up to a given tolerance.  <a href="namespacemio.html#a7dcfb78101db4f3634bad069f1e2271f">More...</a><br /></td></tr>
 <tr class="separator:a7dcfb78101db4f3634bad069f1e2271f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f679c8e097cf89ebf35741100e3757a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a8f679c8e097cf89ebf35741100e3757a">is_leap_year</a> (int year)</td></tr>
+<tr class="memdesc:a8f679c8e097cf89ebf35741100e3757a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes if a given year is a leap year.  <a href="namespacemio.html#a8f679c8e097cf89ebf35741100e3757a">More...</a><br /></td></tr>
+<tr class="separator:a8f679c8e097cf89ebf35741100e3757a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a46a8c32ccd44e57584abc88bf22eee11"><td class="memTemplParams" colspan="2">template&lt;typename X , typename V &gt; </td></tr>
 <tr class="memitem:a46a8c32ccd44e57584abc88bf22eee11"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a46a8c32ccd44e57584abc88bf22eee11">linear_interpolation</a> (const X &amp;x_eval, const X &amp;x_1, const X &amp;x_2, const V &amp;y1, const V &amp;y2)</td></tr>
 <tr class="memdesc:a46a8c32ccd44e57584abc88bf22eee11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear interpolation between two data values.  <a href="namespacemio.html#a46a8c32ccd44e57584abc88bf22eee11">More...</a><br /></td></tr>
@@ -837,6 +926,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a82b6bb635d6376fc1886175c4f8e75d3"><td class="memTemplParams" colspan="2">template&lt;class Graph , class NodeF , class EdgeF &gt; </td></tr>
 <tr class="memitem:a82b6bb635d6376fc1886175c4f8e75d3"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a82b6bb635d6376fc1886175c4f8e75d3">make_graph_sim_stochastic</a> (double t0, double dt, <a class="el" href="classmio_1_1Graph.html">Graph</a> &amp;&amp;g, NodeF &amp;&amp;node_func, EdgeF &amp;&amp;edge_func)</td></tr>
 <tr class="separator:a82b6bb635d6376fc1886175c4f8e75d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bc1e5644deaefcfcc6da0260337a080"><td class="memTemplParams" colspan="2">template&lt;class MultiIndex &gt; </td></tr>
+<tr class="memitem:a5bc1e5644deaefcfcc6da0260337a080"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1IndexRange.html">IndexRange</a>&lt; MultiIndex &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a5bc1e5644deaefcfcc6da0260337a080">make_index_range</a> (const MultiIndex &amp;dimensions)</td></tr>
+<tr class="memdesc:a5bc1e5644deaefcfcc6da0260337a080"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="classmio_1_1Range.html" title="immutable random access range, e.g.">Range</a> that can be used to iterate over all MultiIndices in the given dimensions.  <a href="namespacemio.html#a5bc1e5644deaefcfcc6da0260337a080">More...</a><br /></td></tr>
+<tr class="separator:a5bc1e5644deaefcfcc6da0260337a080"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad829a4e21b9bfa28bac6b3359a0c3cf3"><td class="memTemplParams" colspan="2">template&lt;class V &gt; </td></tr>
 <tr class="memitem:ad829a4e21b9bfa28bac6b3359a0c3cf3"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#ad829a4e21b9bfa28bac6b3359a0c3cf3">make_migration_damping_vector</a> (<a class="el" href="classmio_1_1ColumnVectorShape.html">ColumnVectorShape</a> shape, V &amp;&amp;groups)</td></tr>
 <tr class="memdesc:ad829a4e21b9bfa28bac6b3359a0c3cf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make migration coefficient damping vector from dampings by group.  <a href="namespacemio.html#ad829a4e21b9bfa28bac6b3359a0c3cf3">More...</a><br /></td></tr>
@@ -872,14 +965,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a5af4730337dd5d430e3d09e4a88c09b5"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a5af4730337dd5d430e3d09e4a88c09b5"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="namespacemio.html#af8c639c34c4df5647f084fefb48afc6e">has_eq_op</a>&lt; T &gt;::value, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a5af4730337dd5d430e3d09e4a88c09b5">operator!=</a> (const <a class="el" href="structmio_1_1Node.html">Node</a>&lt; T &gt; &amp;n1, const <a class="el" href="structmio_1_1Node.html">Node</a>&lt; T &gt; &amp;n2)</td></tr>
 <tr class="separator:a5af4730337dd5d430e3d09e4a88c09b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a58db8b765e525595174fe5b502bf85"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a9a58db8b765e525595174fe5b502bf85"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt;!<a class="el" href="namespacemio.html#a828f9a1016d1048d5d3e67dcc5ff4e8f">has_ostream_op</a>&lt; T &gt;::value, std::ostream &amp; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a9a58db8b765e525595174fe5b502bf85">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structmio_1_1Edge.html">Edge</a>&lt; T &gt; &amp;e)</td></tr>
-<tr class="memdesc:a9a58db8b765e525595174fe5b502bf85"><td class="mdescLeft">&#160;</td><td class="mdescRight">out stream operator for edges if edge property type does not have stream operator defined  <a href="namespacemio.html#a9a58db8b765e525595174fe5b502bf85">More...</a><br /></td></tr>
-<tr class="separator:a9a58db8b765e525595174fe5b502bf85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b8d13d4bfbc6ab42cccb685cafdc5fe"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a5b8d13d4bfbc6ab42cccb685cafdc5fe"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="namespacemio.html#a828f9a1016d1048d5d3e67dcc5ff4e8f">has_ostream_op</a>&lt; T &gt;::value, std::ostream &amp; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a5b8d13d4bfbc6ab42cccb685cafdc5fe">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structmio_1_1Edge.html">Edge</a>&lt; T &gt; &amp;e)</td></tr>
 <tr class="memdesc:a5b8d13d4bfbc6ab42cccb685cafdc5fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">out stream operator for edges if edge property type has stream operator defined  <a href="namespacemio.html#a5b8d13d4bfbc6ab42cccb685cafdc5fe">More...</a><br /></td></tr>
 <tr class="separator:a5b8d13d4bfbc6ab42cccb685cafdc5fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a58db8b765e525595174fe5b502bf85"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a9a58db8b765e525595174fe5b502bf85"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt;!<a class="el" href="namespacemio.html#a828f9a1016d1048d5d3e67dcc5ff4e8f">has_ostream_op</a>&lt; T &gt;::value, std::ostream &amp; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a9a58db8b765e525595174fe5b502bf85">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="structmio_1_1Edge.html">Edge</a>&lt; T &gt; &amp;e)</td></tr>
+<tr class="memdesc:a9a58db8b765e525595174fe5b502bf85"><td class="mdescLeft">&#160;</td><td class="mdescRight">out stream operator for edges if edge property type does not have stream operator defined  <a href="namespacemio.html#a9a58db8b765e525595174fe5b502bf85">More...</a><br /></td></tr>
+<tr class="separator:a9a58db8b765e525595174fe5b502bf85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d44315af9f65cbb43ea90af7f1fae30"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a2d44315af9f65cbb43ea90af7f1fae30"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if_t&lt; <a class="el" href="namespacemio.html#af8c639c34c4df5647f084fefb48afc6e">has_eq_op</a>&lt; T &gt;::value, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a2d44315af9f65cbb43ea90af7f1fae30">operator==</a> (const <a class="el" href="structmio_1_1Edge.html">Edge</a>&lt; T &gt; &amp;e1, const <a class="el" href="structmio_1_1Edge.html">Edge</a>&lt; T &gt; &amp;e2)</td></tr>
 <tr class="memdesc:a2d44315af9f65cbb43ea90af7f1fae30"><td class="mdescLeft">&#160;</td><td class="mdescRight">comparison operator if edge property type is equality comparable  <a href="namespacemio.html#a2d44315af9f65cbb43ea90af7f1fae30">More...</a><br /></td></tr>
@@ -915,6 +1008,10 @@ Functions</h2></td></tr>
 <tr class="memitem:af9a8796a9d01a72a28ac34b1aa1332b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt; Eigen::MatrixXd &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#af9a8796a9d01a72a28ac34b1aa1332b4">read_mobility_plain</a> (const std::string &amp;filename)</td></tr>
 <tr class="memdesc:af9a8796a9d01a72a28ac34b1aa1332b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads txt migration data or contact which is given by values only and separated by spaces.  <a href="namespacemio.html#af9a8796a9d01a72a28ac34b1aa1332b4">More...</a><br /></td></tr>
 <tr class="separator:af9a8796a9d01a72a28ac34b1aa1332b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbafd254323c01fa285df4c974f75d84"><td class="memTemplParams" colspan="2">template&lt;class SubIndex , class SuperIndex &gt; </td></tr>
+<tr class="memitem:adbafd254323c01fa285df4c974f75d84"><td class="memTemplItemLeft" align="right" valign="top">SubIndex&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#adbafd254323c01fa285df4c974f75d84">reduce_index</a> (const SuperIndex &amp;index)</td></tr>
+<tr class="memdesc:adbafd254323c01fa285df4c974f75d84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a SubIndex by copying values from SuperIndex.  <a href="namespacemio.html#adbafd254323c01fa285df4c974f75d84">More...</a><br /></td></tr>
+<tr class="separator:adbafd254323c01fa285df4c974f75d84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cd64a3ccb4b0435e7de0f3afef289ea"><td class="memTemplParams" colspan="2">template&lt;typename M &gt; </td></tr>
 <tr class="memitem:a2cd64a3ccb4b0435e7de0f3afef289ea"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a2cd64a3ccb4b0435e7de0f3afef289ea">reshape</a> (M &amp;&amp;m, Eigen::Index rows, Eigen::Index cols)</td></tr>
 <tr class="memdesc:a2cd64a3ccb4b0435e7de0f3afef289ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">reshape the matrix.  <a href="namespacemio.html#a2cd64a3ccb4b0435e7de0f3afef289ea">More...</a><br /></td></tr>
@@ -955,20 +1052,27 @@ Functions</h2></td></tr>
 <tr class="memdesc:ad6e3cf3f2cc4c651d581573f57331229"><td class="mdescLeft">&#160;</td><td class="mdescRight">serialize an enum value as its underlying type.  <a href="namespacemio.html#ad6e3cf3f2cc4c651d581573f57331229">More...</a><br /></td></tr>
 <tr class="separator:ad6e3cf3f2cc4c651d581573f57331229"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f42fd4fd378be54e349ec0043efeb1d"><td class="memTemplParams" colspan="2">template&lt;class ContactLocation , class Model , class MigrationParams , class MigrationCoefficientGroup , class InfectionState , class ReadFunction &gt; </td></tr>
-<tr class="memitem:a8f42fd4fd378be54e349ec0043efeb1d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt; void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a8f42fd4fd378be54e349ec0043efeb1d">set_edges</a> (const fs::path &amp;data_dir, <a class="el" href="classmio_1_1Graph.html">Graph</a>&lt; Model, MigrationParams &gt; &amp;params_graph, std::initializer_list&lt; InfectionState &gt; &amp;migrating_compartments, size_t contact_locations_size, ReadFunction &amp;&amp;read_func, std::vector&lt; <a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> &gt; commuting_weights=std::vector&lt; <a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> &gt;{})</td></tr>
+<tr class="memitem:a8f42fd4fd378be54e349ec0043efeb1d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt; void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a8f42fd4fd378be54e349ec0043efeb1d">set_edges</a> (const fs::path &amp;data_dir, <a class="el" href="classmio_1_1Graph.html">Graph</a>&lt; Model, MigrationParams &gt; &amp;params_graph, std::initializer_list&lt; InfectionState &gt; &amp;migrating_compartments, size_t contact_locations_size, ReadFunction &amp;&amp;read_func, std::vector&lt; <a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> &gt; commuting_weights=std::vector&lt; <a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> &gt;{})</td></tr>
 <tr class="memdesc:a8f42fd4fd378be54e349ec0043efeb1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the graph edges.  <a href="namespacemio.html#a8f42fd4fd378be54e349ec0043efeb1d">More...</a><br /></td></tr>
 <tr class="separator:a8f42fd4fd378be54e349ec0043efeb1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac76d1d8f469ab547ed1ceb5e8c96f271"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#ac76d1d8f469ab547ed1ceb5e8c96f271">set_log_level</a> (<a class="el" href="namespacemio.html#a67881790c6dfd8c058d27e5f1fe24220">LogLevel</a> level)</td></tr>
 <tr class="memdesc:ac76d1d8f469ab547ed1ceb5e8c96f271"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the verbosity of the logger.  <a href="namespacemio.html#ac76d1d8f469ab547ed1ceb5e8c96f271">More...</a><br /></td></tr>
 <tr class="separator:ac76d1d8f469ab547ed1ceb5e8c96f271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62370f41f294bb6b3a1f32fc7a37473c"><td class="memTemplParams" colspan="2">template&lt;class TestAndTrace , class ContactPattern , class Model , class MigrationParams , class Parameters , class ReadFunction , class NodeIdFunction &gt; </td></tr>
-<tr class="memitem:a62370f41f294bb6b3a1f32fc7a37473c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt; void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a62370f41f294bb6b3a1f32fc7a37473c">set_nodes</a> (const Parameters &amp;params, <a class="el" href="structmio_1_1Date.html">Date</a> start_date, <a class="el" href="structmio_1_1Date.html">Date</a> end_date, const fs::path &amp;data_dir, const std::string &amp;population_data_path, bool is_node_for_county, <a class="el" href="classmio_1_1Graph.html">Graph</a>&lt; Model, MigrationParams &gt; &amp;params_graph, ReadFunction &amp;&amp;read_func, NodeIdFunction &amp;&amp;node_func, const std::vector&lt; double &gt; &amp;scaling_factor_inf, double scaling_factor_icu, double tnt_capacity_factor, int num_days=0, bool export_time_series=false)</td></tr>
-<tr class="memdesc:a62370f41f294bb6b3a1f32fc7a37473c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the graph nodes for counties or districts.  <a href="namespacemio.html#a62370f41f294bb6b3a1f32fc7a37473c">More...</a><br /></td></tr>
-<tr class="separator:a62370f41f294bb6b3a1f32fc7a37473c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cf88d851af8328a99b9e00645fd3a33"><td class="memTemplParams" colspan="2">template&lt;class TestAndTrace , class ContactPattern , class Model , class MigrationParams , class Parameters , class ReadFunction , class NodeIdFunction &gt; </td></tr>
+<tr class="memitem:a7cf88d851af8328a99b9e00645fd3a33"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespacemio.html#ae556a666d14183eb2bf3a3efc11551ec">IOResult</a>&lt; void &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a7cf88d851af8328a99b9e00645fd3a33">set_nodes</a> (const Parameters &amp;params, <a class="el" href="structmio_1_1Date.html">Date</a> start_date, <a class="el" href="structmio_1_1Date.html">Date</a> end_date, const fs::path &amp;data_dir, const std::string &amp;population_data_path, bool is_node_for_county, <a class="el" href="classmio_1_1Graph.html">Graph</a>&lt; Model, MigrationParams &gt; &amp;params_graph, ReadFunction &amp;&amp;read_func, NodeIdFunction &amp;&amp;node_func, const std::vector&lt; double &gt; &amp;scaling_factor_inf, double scaling_factor_icu, double tnt_capacity_factor, int num_days=0, bool export_time_series=false, bool rki_age_groups=true)</td></tr>
+<tr class="memdesc:a7cf88d851af8328a99b9e00645fd3a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the graph nodes for counties or districts.  <a href="namespacemio.html#a7cf88d851af8328a99b9e00645fd3a33">More...</a><br /></td></tr>
+<tr class="separator:a7cf88d851af8328a99b9e00645fd3a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9109ed83aaeea1ebec958b6ac8cb48dd"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemio.html#a9109ed83aaeea1ebec958b6ac8cb48dd">set_ostream_format</a> (std::ostream &amp;out, size_t width, size_t precision, char fill=' ')</td></tr>
+<tr class="memdesc:a9109ed83aaeea1ebec958b6ac8cb48dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds manipulators for width, (fixed) precision and fill character to an ostream.  <a href="namespacemio.html#a9109ed83aaeea1ebec958b6ac8cb48dd">More...</a><br /></td></tr>
+<tr class="separator:a9109ed83aaeea1ebec958b6ac8cb48dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf026dd6066d8d0e413fb754082a2dd2"><td class="memTemplParams" colspan="2">template&lt;class Model , class Sim  = Simulation&lt;Model&gt;&gt; </td></tr>
-<tr class="memitem:adf026dd6066d8d0e413fb754082a2dd2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; <a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#adf026dd6066d8d0e413fb754082a2dd2">simulate</a> (double t0, double tmax, double dt, Model const &amp;model, std::shared_ptr&lt; <a class="el" href="classmio_1_1IntegratorCore.html">IntegratorCore</a> &gt; integrator=nullptr)</td></tr>
-<tr class="memdesc:adf026dd6066d8d0e413fb754082a2dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">simulate simulates a compartmental model  <a href="namespacemio.html#adf026dd6066d8d0e413fb754082a2dd2">More...</a><br /></td></tr>
+<tr class="memitem:adf026dd6066d8d0e413fb754082a2dd2"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; <a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#adf026dd6066d8d0e413fb754082a2dd2">simulate</a> (double t0, double tmax, double dt, Model const &amp;model, std::shared_ptr&lt; <a class="el" href="classmio_1_1IntegratorCore.html">IntegratorCore</a> &gt; integrator=nullptr)</td></tr>
+<tr class="memdesc:adf026dd6066d8d0e413fb754082a2dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a <a class="el" href="classmio_1_1Simulation.html" title="A class for the simulation of a compartment model.">Simulation</a> of a <a class="el" href="structmio_1_1CompartmentalModel.html" title="CompartmentalModel is a template for a compartmental model for an array of initial populations and a ...">CompartmentalModel</a>.  <a href="namespacemio.html#adf026dd6066d8d0e413fb754082a2dd2">More...</a><br /></td></tr>
 <tr class="separator:adf026dd6066d8d0e413fb754082a2dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a580de125e6e38fee3d847595d4f2bbbf"><td class="memTemplParams" colspan="2">template&lt;class Model , class Sim  = FlowSimulation&lt;Model&gt;&gt; </td></tr>
+<tr class="memitem:a580de125e6e38fee3d847595d4f2bbbf"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt; <a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a580de125e6e38fee3d847595d4f2bbbf">simulate_flows</a> (double t0, double tmax, double dt, Model const &amp;model, std::shared_ptr&lt; <a class="el" href="classmio_1_1IntegratorCore.html">IntegratorCore</a> &gt; integrator=nullptr)</td></tr>
+<tr class="memdesc:a580de125e6e38fee3d847595d4f2bbbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a <a class="el" href="classmio_1_1FlowSimulation.html">FlowSimulation</a> of a <a class="el" href="classmio_1_1FlowModel.html" title="A FlowModel is a CompartmentalModel defined by the flows between compartments.">FlowModel</a>.  <a href="namespacemio.html#a580de125e6e38fee3d847595d4f2bbbf">More...</a><br /></td></tr>
+<tr class="separator:a580de125e6e38fee3d847595d4f2bbbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad68521b3c371e12d598418900b3049d"><td class="memTemplParams" colspan="2">template&lt;class M , std::enable_if_t&lt; is_dynamic_matrix&lt; M &gt;::value, int &gt;  = 0&gt; </td></tr>
 <tr class="memitem:aad68521b3c371e12d598418900b3049d"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#aad68521b3c371e12d598418900b3049d">slice</a> (M &amp;&amp;m, <a class="el" href="structmio_1_1Seq.html">Seq</a>&lt; Eigen::Index &gt; rows, <a class="el" href="structmio_1_1Seq.html">Seq</a>&lt; Eigen::Index &gt; cols)</td></tr>
 <tr class="memdesc:aad68521b3c371e12d598418900b3049d"><td class="mdescLeft">&#160;</td><td class="mdescRight">take a regular slice of a matrix.  <a href="namespacemio.html#aad68521b3c371e12d598418900b3049d">More...</a><br /></td></tr>
@@ -1034,6 +1138,18 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a3eb9e99214aba93f9e66dcb7fb2949c6"><td class="memTemplParams" colspan="2">template&lt;class... Types&gt; </td></tr>
+<tr class="memitem:a3eb9e99214aba93f9e66dcb7fb2949c6"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a3eb9e99214aba93f9e66dcb7fb2949c6">has_duplicates_v</a> = <a class="el" href="structmio_1_1has__duplicates.html">has_duplicates</a>&lt;Types...&gt;::value</td></tr>
+<tr class="memdesc:a3eb9e99214aba93f9e66dcb7fb2949c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether Type has any duplicates.  <a href="namespacemio.html#a3eb9e99214aba93f9e66dcb7fb2949c6">More...</a><br /></td></tr>
+<tr class="separator:a3eb9e99214aba93f9e66dcb7fb2949c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02da408d97307651d9f526a9c3f08a40"><td class="memTemplParams" colspan="2">template&lt;class Type , class... Types&gt; </td></tr>
+<tr class="memitem:a02da408d97307651d9f526a9c3f08a40"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a02da408d97307651d9f526a9c3f08a40">index_of_type_v</a> = <a class="el" href="structmio_1_1index__of__type.html">index_of_type</a>&lt;Type, Types...&gt;::value</td></tr>
+<tr class="memdesc:a02da408d97307651d9f526a9c3f08a40"><td class="mdescLeft">&#160;</td><td class="mdescRight">The index of Type in the list Types.  <a href="namespacemio.html#a02da408d97307651d9f526a9c3f08a40">More...</a><br /></td></tr>
+<tr class="separator:a02da408d97307651d9f526a9c3f08a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e3a48068fb5921636cab1ffb4c7eea1"><td class="memTemplParams" colspan="2">template&lt;class Type , class... Types&gt; </td></tr>
+<tr class="memitem:a9e3a48068fb5921636cab1ffb4c7eea1"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a9e3a48068fb5921636cab1ffb4c7eea1">is_type_in_list_v</a> = <a class="el" href="structmio_1_1is__type__in__list.html">is_type_in_list</a>&lt;Type, Types...&gt;::value</td></tr>
+<tr class="memdesc:a9e3a48068fb5921636cab1ffb4c7eea1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether Type is in the list Types.  <a href="namespacemio.html#a9e3a48068fb5921636cab1ffb4c7eea1">More...</a><br /></td></tr>
+<tr class="separator:a9e3a48068fb5921636cab1ffb4c7eea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader"></div></td></tr>
 <tr class="memitem:a12844b1c358ec3b74eba28dc795087fd"><td class="memTemplParams" colspan="2">template&lt;class Trait &gt; </td></tr>
 <tr class="memitem:a12844b1c358ec3b74eba28dc795087fd"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemio.html#a12844b1c358ec3b74eba28dc795087fd">negation_v</a> = <a class="el" href="structmio_1_1negation.html">negation</a>&lt;Trait&gt;::value</td></tr>
@@ -1106,6 +1222,20 @@ template&lt;class M &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="namespacemio.html#af6d8d488db7199d4e87910999c8b30ec">mio::CVPlainMatrixT</a> = typedef typename <a class="el" href="structmio_1_1CVPlainMatrix.html">CVPlainMatrix</a>&lt;M&gt;::Type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a76032c2b247049f61bd927aeb89472eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76032c2b247049f61bd927aeb89472eb">&#9670;&nbsp;</a></span>DefaultIntegratorCore</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacemio.html#a76032c2b247049f61bd927aeb89472eb">mio::DefaultIntegratorCore</a> = typedef <a class="el" href="classmio_1_1ControlledStepperWrapper.html">mio::ControlledStepperWrapper</a>&lt;boost::numeric::odeint::runge_kutta_cash_karp54&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1186,6 +1316,46 @@ template&lt;class M &gt; </div>
 
 </div>
 </div>
+<a id="af36c2127af23cdd9c3b02dd800c2915e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af36c2127af23cdd9c3b02dd800c2915e">&#9670;&nbsp;</a></span>get_derivatives_expr_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class M &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacemio.html#af36c2127af23cdd9c3b02dd800c2915e">mio::get_derivatives_expr_t</a> = typedef decltype(std::declval&lt;const M&amp;&gt;().get_derivatives( std::declval&lt;Eigen::Ref&lt;const Eigen::VectorXd&gt; &gt;(), std::declval&lt;Eigen::Ref&lt;Eigen::VectorXd&gt; &gt;()))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Detect whether certain member functions (the name before '_expr_t') exist. </p>
+<p>If the member function exists in the type M, this template when instatiated will be equal to the return type of the function. Otherwise the template is invalid. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">M</td><td>Any class, e.g. <a class="el" href="classmio_1_1FlowModel.html" title="A FlowModel is a CompartmentalModel defined by the flows between compartments.">FlowModel</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa5d1e4e3820a17d013b5a7e91d73a96d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5d1e4e3820a17d013b5a7e91d73a96d">&#9670;&nbsp;</a></span>get_flows_expr_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class M &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacemio.html#aa5d1e4e3820a17d013b5a7e91d73a96d">mio::get_flows_expr_t</a> = typedef decltype(std::declval&lt;const M&amp;&gt;().get_flows(std::declval&lt;Eigen::Ref&lt;const Eigen::VectorXd&gt; &gt;(), std::declval&lt;Eigen::Ref&lt;const Eigen::VectorXd&gt; &gt;(), std::declval&lt;double&gt;(), std::declval&lt;Eigen::Ref&lt;Eigen::VectorXd&gt; &gt;()))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a97757b3eaa1d1cd6fe1550f26c291bc5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a97757b3eaa1d1cd6fe1550f26c291bc5">&#9670;&nbsp;</a></span>get_infections_relative_expr_t</h2>
 
@@ -1201,6 +1371,22 @@ template&lt;class Sim &gt; </div>
 </div><div class="memdoc">
 
 <p>detect a get_infections_relative function for the Model type. </p>
+
+</div>
+</div>
+<a id="a951c87b8f22bce14892fefe0f464b41b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a951c87b8f22bce14892fefe0f464b41b">&#9670;&nbsp;</a></span>get_initial_flows_expr_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class M &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacemio.html#a951c87b8f22bce14892fefe0f464b41b">mio::get_initial_flows_expr_t</a> = typedef decltype(std::declval&lt;Eigen::VectorXd&gt;() = std::declval&lt;const M&amp;&gt;().get_initial_flows())</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -1537,6 +1723,30 @@ template&lt;class C &gt; </div>
 
 </div>
 </div>
+<a id="a1cce713b5cc60fdefa96b63c78cc9b47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cce713b5cc60fdefa96b63c78cc9b47">&#9670;&nbsp;</a></span>is_flow_model</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Model &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacemio.html#a1cce713b5cc60fdefa96b63c78cc9b47">mio::is_flow_model</a> = typedef std::integral_constant&lt;bool, (<a class="el" href="structmio_1_1is__expression__valid.html">is_expression_valid</a>&lt;<a class="el" href="namespacemio.html#af36c2127af23cdd9c3b02dd800c2915e">get_derivatives_expr_t</a>, Model&gt;::value &amp;&amp; <a class="el" href="structmio_1_1is__expression__valid.html">is_expression_valid</a>&lt;<a class="el" href="namespacemio.html#aa5d1e4e3820a17d013b5a7e91d73a96d">get_flows_expr_t</a>, Model&gt;::value &amp;&amp; <a class="el" href="structmio_1_1is__expression__valid.html">is_expression_valid</a>&lt;<a class="el" href="namespacemio.html#a951c87b8f22bce14892fefe0f464b41b">get_initial_flows_expr_t</a>, Model&gt;::value &amp;&amp; <a class="el" href="namespacemio.html#affa0f99f4573e98460b38e88d9c107ba">is_compartment_model</a>&lt;Model&gt;::value)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Template meta function to check if a type is a valid flow model. </p>
+<p>Defines a static constant of name <code>value</code>. The constant <code>value</code> will be equal to true if M is a valid flow model type. Otherwise, <code>value</code> will be equal to false. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Model</td><td>A type that may or may not be a flow model. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a6a13de5a1cf9acb4db85042f9bc948ea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6a13de5a1cf9acb4db85042f9bc948ea">&#9670;&nbsp;</a></span>is_iterator</h2>
 
@@ -1828,6 +2038,25 @@ template&lt;class Sim &gt; </div>
 </div><div class="memdoc">
 
 <p>detect a get_migration_factors function for the Model type. </p>
+
+</div>
+</div>
+<a id="a49caa280ba5357645388c8cb56d4da17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49caa280ba5357645388c8cb56d4da17">&#9670;&nbsp;</a></span>type_at_index_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t Index, class... Types&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacemio.html#a49caa280ba5357645388c8cb56d4da17">mio::type_at_index_t</a> = typedef typename <a class="el" href="structmio_1_1type__at__index.html">type_at_index</a>&lt;<a class="el" href="classmio_1_1Index.html">Index</a>, Types...&gt;::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The type at the Index-th position in the list Types. </p>
+<p>Equivalent to type_at&lt;Index, Types...&gt;::type. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structmio_1_1type__at__index.html" title="Finds the type at the Index-th position in the list Types.">type_at_index</a>. </dd></dl>
 
 </div>
 </div>
@@ -2330,6 +2559,33 @@ template&lt;class Sim , class  = std::enable_if_t&lt;is_compartment_model_simula
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aab02eb7f4efb5cb5a374a7ad79497784"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab02eb7f4efb5cb5a374a7ad79497784">&#9670;&nbsp;</a></span>calculate_partial_sum_of_months()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt;int, 12&gt; mio::calculate_partial_sum_of_months </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmio_1_1Date.html">Date</a> &amp;&#160;</td>
+          <td class="paramname"><em>date</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the cumulative number of days at the end of each month for a given year. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td><a class="el" href="structmio_1_1Date.html" title="Simple date representation as year, month, and day.">Date</a> object representing the year we use to compute the cumulative days. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>array with partial sum for each month </dd></dl>
 
 </div>
 </div>
@@ -3113,6 +3369,46 @@ template&lt;class M &gt; </div>
 
 </div>
 </div>
+<a id="a9be9ff17fb76c68d0a1e6c2463164dcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be9ff17fb76c68d0a1e6c2463164dcd">&#9670;&nbsp;</a></span>enum_members()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::array&lt;T, size_t(T::Count)&gt; mio::enum_members </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get an std::array that contains all members of an enum class. </p>
+<p>The enum class must be a valid index, i.e. members must be sequential starting at 0 and there must be a member <code>Count</code> at the end, that will not be included in the array. Example: </p><div class="fragment"><div class="line"><span class="keyword">enum class</span> <a class="code" href="namespacemio_1_1iseir.html#ab27b12ec16e03c1857925e3c24ff99e8a3a3ea00cfc35332cedf6e5e9a32e94da">E</a> { A, B, <a class="code" href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704ae93f994f01c537c4e2f7d8528c3eb5e9">Count</a> };</div>
+<div class="line">assert(enum_members&lt;E&gt;() == std::array&lt;2, E&gt;(E::A, E::B));</div>
+<div class="ttc" id="anamespacemio_1_1abm_html_ad1ae0779f53a827b524e1f0925b9d704ae93f994f01c537c4e2f7d8528c3eb5e9"><div class="ttname"><a href="namespacemio_1_1abm.html#ad1ae0779f53a827b524e1f0925b9d704ae93f994f01c537c4e2f7d8528c3eb5e9">mio::abm::InfectionState::Count</a></div><div class="ttdeci">@ Count</div></div>
+<div class="ttc" id="anamespacemio_1_1iseir_html_ab27b12ec16e03c1857925e3c24ff99e8a3a3ea00cfc35332cedf6e5e9a32e94da"><div class="ttname"><a href="namespacemio_1_1iseir.html#ab27b12ec16e03c1857925e3c24ff99e8a3a3ea00cfc35332cedf6e5e9a32e94da">mio::iseir::InfectionState::E</a></div><div class="ttdeci">@ E</div></div>
+</div><!-- fragment --> <dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>An enum class that is a valid index. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Array of all members of the enum class not including T::Count. </dd></dl>
+
+</div>
+</div>
 <a id="aebf8e2a8ccea82f3bbd91c3d479d1094"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aebf8e2a8ccea82f3bbd91c3d479d1094">&#9670;&nbsp;</a></span>evolve_model()</h2>
 
@@ -3149,6 +3445,53 @@ template&lt;class Sim &gt; </div>
 
 <p>edge functor for migration simulation. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classmio_1_1SimulationNode.html#a9a8c41cc352e8e1122fe80304768f951">SimulationNode::evolve</a> </dd></dl>
+
+</div>
+</div>
+<a id="ad5b7d8afd9adadd58170682f0d6e4240"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5b7d8afd9adadd58170682f0d6e4240">&#9670;&nbsp;</a></span>extend_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class SuperIndex , class SubIndex &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">SuperIndex mio::extend_index </td>
+          <td>(</td>
+          <td class="paramtype">const SubIndex &amp;&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>fill_value</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a SuperIndex by copying values from SubIndex, filling new categories with fill_value. </p>
+<p>If a type T is contained multiple times in SubIndex, only the first occurance of T is used. For example, <code>extend_index&lt;<a class="el" href="classmio_1_1Index.html" title="An Index with more than one template parameter combines several Index objects.">Index</a>&lt;T, T, T&gt;&gt;(<a class="el" href="classmio_1_1Index.html" title="An Index with more than one template parameter combines several Index objects.">Index</a>&lt;T, T&gt;{1,2})</code> returns <code>{1,1,1}</code>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>An instance of SubIndex </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fill_value</td><td>The value to use for categories not in SubIndex. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">SuperIndex</td><td>Any <a class="el" href="classmio_1_1Index.html" title="An Index with more than one template parameter combines several Index objects.">Index</a>. </td></tr>
+    <tr><td class="paramname">SubIndex</td><td>An <a class="el" href="classmio_1_1Index.html" title="An Index with more than one template parameter combines several Index objects.">Index</a> that contains a subset of the categories from SuperIndex. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A (super)index with the given categories and values from index. </dd></dl>
 
 </div>
 </div>
@@ -4096,6 +4439,33 @@ template&lt;class Sim , std::enable_if_t&lt;!is_expression_valid&lt; get_migrati
 
 </div>
 </div>
+<a id="a1a3d6ccfd62c6d5d6da08e3205663124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a3d6ccfd62c6d5d6da08e3205663124">&#9670;&nbsp;</a></span>get_month_length()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mio::get_month_length </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structmio_1_1Date.html">Date</a>&#160;</td>
+          <td class="paramname"><em>date</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes the length of a month for a given date. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">date</td><td>date. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>length of month for given date </dd></dl>
+
+</div>
+</div>
 <a id="a836ec51b48f63ad6dca0724e9f5b28d8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a836ec51b48f63ad6dca0724e9f5b28d8">&#9670;&nbsp;</a></span>get_offset_in_days()</h2>
 
@@ -4405,6 +4775,33 @@ template&lt;class Simulation &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>interpolated time series at given interpolation points </dd></dl>
+
+</div>
+</div>
+<a id="a8f679c8e097cf89ebf35741100e3757a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f679c8e097cf89ebf35741100e3757a">&#9670;&nbsp;</a></span>is_leap_year()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mio::is_leap_year </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>year</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes if a given year is a leap year. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">year</td><td>year as integer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if year is a leap year, false otherwise </dd></dl>
 
 </div>
 </div>
@@ -4851,6 +5248,34 @@ template&lt;class Graph , class NodeF , class EdgeF &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5bc1e5644deaefcfcc6da0260337a080"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bc1e5644deaefcfcc6da0260337a080">&#9670;&nbsp;</a></span>make_index_range()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class MultiIndex &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmio_1_1IndexRange.html">IndexRange</a>&lt;MultiIndex&gt; mio::make_index_range </td>
+          <td>(</td>
+          <td class="paramtype">const MultiIndex &amp;&#160;</td>
+          <td class="paramname"><em>dimensions</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a <a class="el" href="classmio_1_1Range.html" title="immutable random access range, e.g.">Range</a> that can be used to iterate over all MultiIndices in the given dimensions. </p>
+<p>The range for each <a class="el" href="classmio_1_1Index.html" title="An Index with more than one template parameter combines several Index objects.">Index</a> i in the MultiIndex is determined by [0, d_i), where d_i is the dimension of i. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">dimensions</td><td>A MultiIndex that contains the dimension for each Category. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -5779,6 +6204,42 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
+<a id="adbafd254323c01fa285df4c974f75d84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbafd254323c01fa285df4c974f75d84">&#9670;&nbsp;</a></span>reduce_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class SubIndex , class SuperIndex &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">SubIndex mio::reduce_index </td>
+          <td>(</td>
+          <td class="paramtype">const SuperIndex &amp;&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a SubIndex by copying values from SuperIndex. </p>
+<p>If a type T is contained multiple times in SuperIndex, only the first occurance of T is used. For example, <code>reduce_index&lt;<a class="el" href="classmio_1_1Index.html" title="An Index with more than one template parameter combines several Index objects.">Index</a>&lt;T, T&gt;&gt;(<a class="el" href="classmio_1_1Index.html" title="An Index with more than one template parameter combines several Index objects.">Index</a>&lt;T, T, T&gt;{1,2,3})</code> returns <code>{1,1}</code>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>An instance of SuperIndex </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">SubIndex</td><td>An <a class="el" href="classmio_1_1Index.html" title="An Index with more than one template parameter combines several Index objects.">Index</a> that contains a subset of the categories from SuperIndex. </td></tr>
+    <tr><td class="paramname">SuperIndex</td><td>Any <a class="el" href="classmio_1_1Index.html" title="An Index with more than one template parameter combines several Index objects.">Index</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A (sub)index with the given categories and values from index. </dd></dl>
+
+</div>
+</div>
 <a id="a2cd64a3ccb4b0435e7de0f3afef289ea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2cd64a3ccb4b0435e7de0f3afef289ea">&#9670;&nbsp;</a></span>reshape()</h2>
 
@@ -6279,8 +6740,8 @@ template&lt;class ContactLocation , class Model , class MigrationParams , class 
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> &gt;&#160;</td>
-          <td class="paramname"><em>commuting_weights</em> = <code>std::vector&lt;<a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>&gt;{}</code>&#160;</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a> &gt;&#160;</td>
+          <td class="paramname"><em>commuting_weights</em> = <code>std::vector&lt;<a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>&gt;{}</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -6325,8 +6786,8 @@ template&lt;class ContactLocation , class Model , class MigrationParams , class 
 
 </div>
 </div>
-<a id="a62370f41f294bb6b3a1f32fc7a37473c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62370f41f294bb6b3a1f32fc7a37473c">&#9670;&nbsp;</a></span>set_nodes()</h2>
+<a id="a7cf88d851af8328a99b9e00645fd3a33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cf88d851af8328a99b9e00645fd3a33">&#9670;&nbsp;</a></span>set_nodes()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -6415,7 +6876,13 @@ template&lt;class TestAndTrace , class ContactPattern , class Model , class Migr
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>export_time_series</em> = <code>false</code>&#160;</td>
+          <td class="paramname"><em>export_time_series</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>rki_age_groups</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -6442,9 +6909,62 @@ template&lt;class TestAndTrace , class ContactPattern , class Model , class Migr
     <tr><td class="paramdir">[in]</td><td class="paramname">tnt_capacity_factor</td><td>Factor for test and trace capacity. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">num_days</td><td>Number of days to be simulated; required to load data for vaccinations during the simulation. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">export_time_series</td><td>If true, reads data for each day of simulation and writes it in the same directory as the input files. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rki_age_groups</td><td>Specifies whether rki-age_groups should be used. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a9109ed83aaeea1ebec958b6ac8cb48dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9109ed83aaeea1ebec958b6ac8cb48dd">&#9670;&nbsp;</a></span>set_ostream_format()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; mio::set_ostream_format </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>precision</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>fill</em> = <code>'&#160;'</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds manipulators for width, (fixed) precision and fill character to an ostream. </p>
+<p>Note that the formatting is consumed by the first output given to the ostream. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Any std::ostream. </td></tr>
+    <tr><td class="paramname">width</td><td>Minimum width of the output. </td></tr>
+    <tr><td class="paramname">precision</td><td>The exact number of decimals (used only for numbers). </td></tr>
+    <tr><td class="paramname">fill</td><td>[Default: A space ' '] The character used for padding. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns a reference to out. </dd></dl>
 
 </div>
 </div>
@@ -6457,7 +6977,7 @@ template&lt;class TestAndTrace , class ContactPattern , class Model , class Migr
 template&lt;class Model , class Sim  = Simulation&lt;Model&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt;<a class="el" href="config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>&gt; mio::simulate </td>
+          <td class="memname"><a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt;<a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>&gt; mio::simulate </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>t0</em>, </td>
@@ -6494,21 +7014,90 @@ template&lt;class Model , class Sim  = Simulation&lt;Model&gt;&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>simulate simulates a compartmental model </p>
+<p>Run a <a class="el" href="classmio_1_1Simulation.html" title="A class for the simulation of a compartment model.">Simulation</a> of a <a class="el" href="structmio_1_1CompartmentalModel.html" title="CompartmentalModel is a template for a compartmental model for an array of initial populations and a ...">CompartmentalModel</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">t0</td><td>start time </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">tmax</td><td>end time </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">dt</td><td>initial step size of integration </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">model</td><td>An instance of a compartmental model </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">t0</td><td>Start time. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmax</td><td>End time. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dt</td><td>Initial step size of integration. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">model</td><td>An instance of a <a class="el" href="structmio_1_1CompartmentalModel.html" title="CompartmentalModel is a template for a compartmental model for an array of initial populations and a ...">CompartmentalModel</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">integrator</td><td>Optionally override the <a class="el" href="classmio_1_1IntegratorCore.html">IntegratorCore</a> used by the <a class="el" href="classmio_1_1Simulation.html" title="A class for the simulation of a compartment model.">Simulation</a>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="classmio_1_1TimeSeries.html" title="stores vectors of values at time points (or some other abstract variable) the value at each time poin...">TimeSeries</a> to represent the final simulation result </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classmio_1_1TimeSeries.html" title="stores vectors of values at time points (or some other abstract variable) the value at each time poin...">TimeSeries</a> to represent the final <a class="el" href="classmio_1_1Simulation.html" title="A class for the simulation of a compartment model.">Simulation</a> result </dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Model</td><td>a compartment model type </td></tr>
-    <tr><td class="paramname">Sim</td><td>a simulation type that can simulate the model. </td></tr>
+    <tr><td class="paramname">Model</td><td>The particular Model derived from CompartmentModel to simulate. </td></tr>
+    <tr><td class="paramname">Sim</td><td>A <a class="el" href="classmio_1_1Simulation.html" title="A class for the simulation of a compartment model.">Simulation</a> that can simulate the model. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a580de125e6e38fee3d847595d4f2bbbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a580de125e6e38fee3d847595d4f2bbbf">&#9670;&nbsp;</a></span>simulate_flows()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Model , class Sim  = FlowSimulation&lt;Model&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="classmio_1_1TimeSeries.html">TimeSeries</a>&lt;<a class="el" href="memilio_2config_8h.html#acd4f1d492d83a74716a42615e127d641">ScalarType</a>&gt; &gt; mio::simulate_flows </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>t0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tmax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Model const &amp;&#160;</td>
+          <td class="paramname"><em>model</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classmio_1_1IntegratorCore.html">IntegratorCore</a> &gt;&#160;</td>
+          <td class="paramname"><em>integrator</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Run a <a class="el" href="classmio_1_1FlowSimulation.html">FlowSimulation</a> of a <a class="el" href="classmio_1_1FlowModel.html" title="A FlowModel is a CompartmentalModel defined by the flows between compartments.">FlowModel</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t0</td><td>Start time. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmax</td><td>End time. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dt</td><td>Initial step size of integration. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">model</td><td>An instance of a <a class="el" href="classmio_1_1FlowModel.html" title="A FlowModel is a CompartmentalModel defined by the flows between compartments.">FlowModel</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">integrator</td><td>Optionally override the <a class="el" href="classmio_1_1IntegratorCore.html">IntegratorCore</a> used by the <a class="el" href="classmio_1_1FlowSimulation.html">FlowSimulation</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The simulation result as two <a class="el" href="classmio_1_1TimeSeries.html" title="stores vectors of values at time points (or some other abstract variable) the value at each time poin...">TimeSeries</a>. The first describes the compartments at each time point, the second gives the corresponding flows that lead from t0 to each time point. </dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Model</td><td>The particular Model derived from <a class="el" href="classmio_1_1FlowModel.html" title="A FlowModel is a CompartmentalModel defined by the flows between compartments.">FlowModel</a> to simulate. </td></tr>
+    <tr><td class="paramname">Sim</td><td>A <a class="el" href="classmio_1_1FlowSimulation.html">FlowSimulation</a> that can simulate the model. </td></tr>
   </table>
   </dd>
 </dl>
@@ -6977,6 +7566,87 @@ template&lt;class... Bn&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3eb9e99214aba93f9e66dcb7fb2949c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3eb9e99214aba93f9e66dcb7fb2949c6">&#9670;&nbsp;</a></span>has_duplicates_v</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class... Types&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool mio::has_duplicates_v = <a class="el" href="structmio_1_1has__duplicates.html">has_duplicates</a>&lt;Types...&gt;::value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks whether Type has any duplicates. </p>
+<p>Equivalent to <a class="el" href="structmio_1_1has__duplicates.html#a86383991cd9e17bbace4d755a085ba2b">has_duplicates&lt;Types...&gt;::value</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structmio_1_1is__type__in__list.html" title="Tests whether Type is in the list Types.">is_type_in_list</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a02da408d97307651d9f526a9c3f08a40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02da408d97307651d9f526a9c3f08a40">&#9670;&nbsp;</a></span>index_of_type_v</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Type , class... Types&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::size_t mio::index_of_type_v = <a class="el" href="structmio_1_1index__of__type.html">index_of_type</a>&lt;Type, Types...&gt;::value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The index of Type in the list Types. </p>
+<p>Equivalent to <a class="el" href="structmio_1_1index__of__type.html#aad10f7a8a4b25c2229ae0a8df26129fd">index_of_type&lt;Type, Types...&gt;::value</a>. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structmio_1_1index__of__type.html" title="Finds the index of a Type in the list Types.">index_of_type</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a9e3a48068fb5921636cab1ffb4c7eea1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e3a48068fb5921636cab1ffb4c7eea1">&#9670;&nbsp;</a></span>is_type_in_list_v</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Type , class... Types&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool mio::is_type_in_list_v = <a class="el" href="structmio_1_1is__type__in__list.html">is_type_in_list</a>&lt;Type, Types...&gt;::value</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks whether Type is in the list Types. </p>
+<p>Equivalent to is_type_in_list&lt;Type, Types...&gt;::value. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structmio_1_1is__type__in__list.html" title="Tests whether Type is in the list Types.">is_type_in_list</a>. </dd></dl>
 
 </div>
 </div>

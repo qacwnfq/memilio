@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['agegroup_3199',['AgeGroup',['../namespacemio_1_1abm.html#ac9a874698e76d3706081b2642c5f4a5a',1,'mio::abm']]]
+  ['activitytype_3463',['ActivityType',['../namespacemio_1_1abm.html#a87b19348d6ba20fbe8bcb16485029ce5',1,'mio::abm']]]
 ];

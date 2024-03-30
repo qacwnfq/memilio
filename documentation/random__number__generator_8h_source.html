@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="random__number__generator_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* </span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Copyright (C) 2020-2023 German Aerospace Center (DLR-SC)</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">* Copyright (C) 2020-2024 MEmilio</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">*</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">* Authors: Daniel Abele</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">*</span></div>
@@ -488,9 +488,12 @@ $(function() {
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Real&gt;</div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;<span class="keyword">using</span> UniformDistribution = DistributionAdapter&lt;std::uniform_real_distribution&lt;Real&gt;&gt;;</div>
 <div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160; </div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;} <span class="comment">// namespace mio</span></div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160; </div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Int&gt;</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;<span class="keyword">using</span> PoissonDistribution = DistributionAdapter&lt;std::poisson_distribution&lt;Int&gt;&gt;;</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160; </div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;} <span class="comment">// namespace mio</span></div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160; </div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="acompiler__diagnostics_8h_html"><div class="ttname"><a href="compiler__diagnostics_8h.html">compiler_diagnostics.h</a></div></div>
 <div class="ttc" id="acompiler__diagnostics_8h_html_aae95afe748c78c6edadb3f3783ceebc1"><div class="ttname"><a href="compiler__diagnostics_8h.html#aae95afe748c78c6edadb3f3783ceebc1">MEMILIO_ENABLE_EBO</a></div><div class="ttdeci">#define MEMILIO_ENABLE_EBO</div><div class="ttdef"><b>Definition:</b> compiler_diagnostics.h:75</div></div>
 <div class="ttc" id="acompiler__diagnostics_8h_html_ab1a582833b695bfecd10965e3b52e733"><div class="ttname"><a href="compiler__diagnostics_8h.html#ab1a582833b695bfecd10965e3b52e733">MSVC_WARNING_POP</a></div><div class="ttdeci">#define MSVC_WARNING_POP()</div><div class="ttdef"><b>Definition:</b> compiler_diagnostics.h:44</div></div>
@@ -498,9 +501,9 @@ $(function() {
 <div class="ttc" id="alogging_8h_html"><div class="ttname"><a href="logging_8h.html">logging.h</a></div></div>
 <div class="ttc" id="amiompi_8h_html"><div class="ttname"><a href="miompi_8h.html">miompi.h</a></div></div>
 <div class="ttc" id="anamespacemio_1_1mpi_html_a06f580b00733da1529dc73771c87ba42"><div class="ttname"><a href="namespacemio_1_1mpi.html#a06f580b00733da1529dc73771c87ba42">mio::mpi::get_world</a></div><div class="ttdeci">Comm get_world()</div><div class="ttdoc">Get the global MPI communicator.</div><div class="ttdef"><b>Definition:</b> miompi.cpp:30</div></div>
-<div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:32</div></div>
-<div class="ttc" id="anamespacemio_html_a67881790c6dfd8c058d27e5f1fe24220"><div class="ttname"><a href="namespacemio.html#a67881790c6dfd8c058d27e5f1fe24220">mio::LogLevel</a></div><div class="ttdeci">LogLevel</div><div class="ttdef"><b>Definition:</b> logging.h:36</div></div>
-<div class="ttc" id="anamespacemio_html_a7a8e658f565465ae076eab415d976e1b"><div class="ttname"><a href="namespacemio.html#a7a8e658f565465ae076eab415d976e1b">mio::log</a></div><div class="ttdeci">void log(LogLevel level, spdlog::string_view_t fmt, const Args &amp;... args)</div><div class="ttdef"><b>Definition:</b> logging.h:118</div></div>
+<div class="ttc" id="anamespacemio_html"><div class="ttname"><a href="namespacemio.html">mio</a></div><div class="ttdoc">A collection of classes to simplify handling of matrix shapes in meta programming.</div><div class="ttdef"><b>Definition:</b> compartmentalmodel.h:33</div></div>
+<div class="ttc" id="anamespacemio_html_a67881790c6dfd8c058d27e5f1fe24220"><div class="ttname"><a href="namespacemio.html#a67881790c6dfd8c058d27e5f1fe24220">mio::LogLevel</a></div><div class="ttdeci">LogLevel</div><div class="ttdef"><b>Definition:</b> logging.h:40</div></div>
+<div class="ttc" id="anamespacemio_html_a7a8e658f565465ae076eab415d976e1b"><div class="ttname"><a href="namespacemio.html#a7a8e658f565465ae076eab415d976e1b">mio::log</a></div><div class="ttdeci">void log(LogLevel level, spdlog::string_view_t fmt, const Args &amp;... args)</div><div class="ttdef"><b>Definition:</b> logging.h:122</div></div>
 <div class="ttc" id="anamespacemio_html_a97f6645c13faf4749f34d7e6e191f9ac"><div class="ttname"><a href="namespacemio.html#a97f6645c13faf4749f34d7e6e191f9ac">mio::max</a></div><div class="ttdeci">auto max(const Eigen::MatrixBase&lt; A &gt; &amp;a, B &amp;&amp;b)</div><div class="ttdoc">coefficient wise maximum of two matrices.</div><div class="ttdef"><b>Definition:</b> eigen_util.h:179</div></div>
 <div class="ttc" id="anamespacemio_html_ac3f63f570d35c1f585afa4fb36e62078"><div class="ttname"><a href="namespacemio.html#ac3f63f570d35c1f585afa4fb36e62078">mio::thread_local_rng</a></div><div class="ttdeci">RandomNumberGenerator &amp; thread_local_rng()</div><div class="ttdef"><b>Definition:</b> random_number_generator.cpp:25</div></div>
 <div class="ttc" id="arandom__number__generator_8h_html_abb688b1bca227842d634ac4ef9dbfe3f"><div class="ttname"><a href="random__number__generator_8h.html#abb688b1bca227842d634ac4ef9dbfe3f">MSVC_WARNING_DISABLE_PUSH</a></div><div class="ttdeci">MSVC_WARNING_DISABLE_PUSH(4127) GCC_CLANG_DIAGNOSTIC(ignored &quot;-Wexpansion-to-defined&quot;) namespace mio</div><div class="ttdef"><b>Definition:</b> random_number_generator.h:30</div></div>

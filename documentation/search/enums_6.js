@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['virusvariant_3208',['VirusVariant',['../namespacemio_1_1abm.html#a92b83c9298d24c2568847dfd9843011f',1,'mio::abm']]]
+  ['transportmode_3472',['TransportMode',['../namespacemio_1_1abm.html#a57d768cc04c782f46491781226920ff9',1,'mio::abm']]]
 ];
